@@ -1,7 +1,9 @@
 title            : Effective Data Storytelling using the tidyverse
 instructors      :
  - chester@pacificu.edu
+ collaborators:
+  - aykim@middlebury.edu
 description      : This course is designed to supplement and build on the content covered at http://moderndive.com
 university       : Pacific University
-difficulty_level : 5
+difficulty_level : 2
 time_needed      : 10 hours
