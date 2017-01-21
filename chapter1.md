@@ -1,10 +1,10 @@
 ---
 title       : Applying R basics
-description : Exploring the basics of R on a fivethirtyeight data set
+description : Exploring the basics of R on fivethirtyeight data set based on "Most Police Don’t Live In The Cities They Serve" article.
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c306f947db
-## Most Police Don’t Live In The Cities They Serve
+## Properties of a data frame
 
 Read over the 2014 article from FiveThirtyEight.com entitled "Most Police Don’t Live In The Cities They Serve" [here](http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/).  This article serves as an example of what I'd like you to be able to create by the end of the semester for your final project.  Police and their relationships with citizens has been a controversial topic for many years and has come to the forefront of American culture since the events of Ferguson, Missouri mentioned in this article.
 
