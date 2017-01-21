@@ -2,7 +2,7 @@ title            : Effective Data Storytelling using the tidyverse
 instructors      :
  - chester@pacificu.edu
  - aykim@middlebury.edu
-description      : This course is designed to supplement and build on the content covered at http://moderndive.com
+description      : This course is designed to supplement and build on the content covered at http://moderndive.com .  It assumes that you have taken the Introduction to R course on DataCamp at https://www.datacamp.com/courses/free-introduction-to-r
 university       : Pacific University
 difficulty_level : 2
 time_needed      : 10 hours
