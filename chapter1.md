@@ -1,6 +1,6 @@
 ---
 title       : Applying R basics
-description : Exploring the basics of R on fivethirtyeight data set based on "Most Police Don’t Live In The Cities They Serve" article.
+description : Exploring the basics of R on a data set based on the fivethirtyeight.com "Most Police Don’t Live In The Cities They Serve" article.
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c306f947db
