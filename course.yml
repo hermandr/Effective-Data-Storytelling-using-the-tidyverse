@@ -1,7 +1,7 @@
 title            : Effective Data Storytelling using the tidyverse
 instructors      :
  - chester@pacificu.edu
-description      : This is an automatically generated demo course which will help you on your way to create an awesome DataCamp course.
-university       : DataCamp
-difficulty_level : 2
-time_needed      : 1 hour
+description      : This course is designed to supplement and build on the content covered at http://moderndive.com
+university       : Pacific University
+difficulty_level : 5
+time_needed      : 10 hours
