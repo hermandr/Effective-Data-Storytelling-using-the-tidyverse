@@ -22,19 +22,18 @@ The dataset corresponding to this article from the `fivethirtyeight` package has
 
 *** =pre_exercise_code
 ```{r}
-# You can also prepare your dataset in a specific way in the pre exercise code
-# library(fivethirtyeight)
-# data(police_locals)
 library(tibble)
-library(readr)
-police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
+library(fivethirtyeight)
+data(police_locals)
+#library(readr)
+#police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
 ```
 
 *** =sample_code
 ```{r}
-# library(fivethirtyeight)
-# data(police_locals)
 library(tibble)
+library(fivethirtyeight)
+data(police_locals)
 # police_locals is available in your workspace
 # Identify the names of the columns in police_locals
 
@@ -45,6 +44,8 @@ library(tibble)
 *** =solution
 ```{r}
 library(tibble)
+library(fivethirtyeight)
+data(police_locals)
 # police_locals is available in your workspace
 # Identify the names of the columns in police_locals
 names(police_locals)
@@ -129,12 +130,11 @@ in the `df` data frame.
 
 *** =pre_exercise_code
 ```{r}
-# You can also prepare your dataset in a specific way in the pre exercise code
-# library(fivethirtyeight)
-# data(police_locals)
 library(tibble)
-library(readr)
-police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
+library(fivethirtyeight)
+data(police_locals)
+#library(readr)
+#police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
 ```
 
 *** =solution
@@ -166,12 +166,11 @@ Use `[ ]` to extract specific information about a vector in the `police_locals` 
 
 *** =pre_exercise_code
 ```{r}
-# You can also prepare your dataset in a specific way in the pre exercise code
-# library(fivethirtyeight)
-# data(police_locals)
 library(tibble)
-library(readr)
-police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
+library(fivethirtyeight)
+data(police_locals)
+#library(readr)
+#police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
 ```
 
 *** =solution
@@ -203,12 +202,11 @@ In R, an index refers to the specific entry in an object.  As an example, in a v
 
 *** =pre_exercise_code
 ```{r}
-# You can also prepare your dataset in a specific way in the pre exercise code
-# library(fivethirtyeight)
-# data(police_locals)
 library(tibble)
-library(readr)
-police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
+library(fivethirtyeight)
+data(police_locals)
+#library(readr)
+#police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
 ```
 
 *** =solution
