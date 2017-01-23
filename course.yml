@@ -6,3 +6,4 @@ description      : This course is designed to supplement and build on the conten
 university       : Pacific University
 difficulty_level : 2
 time_needed      : 10 hours
+from: 'r-base-prod:13'

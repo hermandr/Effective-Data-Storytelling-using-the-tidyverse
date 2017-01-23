@@ -146,6 +146,40 @@ test_mc(correct = 3, feedback_msgs = c(msg_bad, msg_bad, msg_success, msg_bad))
 
 
 
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:ca52fa48aa
+## Another join
+
+There may be many reasons for police officers to not live in the same cities as they serve.  One potential reason that has been suggested is that the cost of living in some areas is much higher than in other nearby areas.  The Missouri Economic Resarch and Information Center created a table of the **Composite Cost of Living (Scaled)** for the third quarter of 2016 [here](https://www.missourieconomy.org/indicators/cost_of_living/index.stm).  This data has been loaded as a data frame with the name `cost_of_living`.  As shown on the map at the link, the overall `index` is given in `cost_of_living` for each state and categories of `"high"`, `"mid"`, and `"low"` are created in the `col_group` variable following the ranges on the map.
+
+*** =instructions
+- Use the `inner_join` function in the `dplyr` package to lookup and add the `index` and `col_group` variables to the `police_join` data frame.  (Note that you'll need to think about what the key variable is here.)
+- Assign the name `police_join_cost` to this expanded data frame.
+
+*** =hint
+- Remember to use `?inner_join` to get help as to what to provide as arguments to the function.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:285e794c07
 ## Is this tidy?
 
