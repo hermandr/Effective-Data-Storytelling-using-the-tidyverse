@@ -8,7 +8,7 @@ description : Exploring the basics of R on a data set based on the fivethirtyeig
 
 Read over the 2014 article from FiveThirtyEight.com entitled "Most Police Don’t Live In The Cities They Serve" [here](http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/).   Police and their relationships with citizens has been a controversial topic for many years and has come to the forefront of American culture since the events of Ferguson, Missouri mentioned in this article.
 
-The dataset corresponding to this article from the `fivethirtyeight` package has been loaded as a data frame with name `police_locals` and is available in the workspace.
+The dataset corresponding to this article from the `fivethirtyeight` package has been loaded as a data frame with name `police_locals` and is available in the workspace.  You can view the `police_locals` data frame as an interactive table [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_locals.html).
 
 *** =instructions
 - Get the names of the columns/variables in `police_locals` using the `names` function.
@@ -76,8 +76,7 @@ success_msg("Good work!")
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:792856c06f
 ## Identify observational unit
 
-What is the observational unit in this `police_locals` data frame?  If you need a reminder, you can enter `head(police_locals)` into the Console to check out
-the first six rows of the data frame.
+What is the observational unit in this `police_locals` data frame?  You can view the `police_locals` data frame as an interactive table [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_locals.html).
 
 *** =instructions
 - Percentage of officers

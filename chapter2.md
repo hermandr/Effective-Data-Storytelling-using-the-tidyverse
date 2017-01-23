@@ -6,7 +6,7 @@ description : Look into tidy data properties on data sets from fivethirtyeight.c
 --- type:NormalExercise lang:r xp:100 skills:1 key:fa48676309
 ## Joining data frames
 
-Recall the `police_locals` data frame you worked with in **Applying R Basics**.  There has been
+Recall the `police_locals` data frame you worked with in **Applying R Basics**  [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_locals.html).  There has been
 much discussion about the political divide that exists in the US.  A separate data frame has been
 loaded with the name `ideology` that lists cities, their state, and the political ideology of the
 state.  Created somewhat naively, a description of this `state_ideology` variable follows.
