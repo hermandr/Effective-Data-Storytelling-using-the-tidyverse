@@ -116,7 +116,7 @@ test_mc(correct = 3, feedback_msgs = c(msg_bad, msg_bad, msg_success, msg_bad))
 
 Read over another 2014 article from FiveThirtyEight.com entitled "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women" [here](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/). We'll be working with a data frame used in this story called `bechdel` in the `fivethirtyeight` package throughout this DataCamp course.
 
-Is the `bechdel` data frame tidy?  You can find help `bechdel` on page 6 [here](https://cran.r-project.org/web/packages/fivethirtyeight/fivethirtyeight.pdf).
+Is the `bechdel` data frame tidy?  
 
 *** =instructions
 - Yes, it is neat and easy-to-read.
@@ -124,6 +124,34 @@ Is the `bechdel` data frame tidy?  You can find help `bechdel` on page 6 [here](
 - No, it does not meet all of the requirements of a tidy data set.
 - None of the above are correct.
 
+*** =hint
+- You can find help on `bechdel` on page 6 [here](https://cran.r-project.org/web/packages/fivethirtyeight/fivethirtyeight.pdf) or by using `?bechdel`.
+
+*** =pre_exercise_code
+```{r}
+# library(fivethirtyeight)
+# data(bechdel)
+bechdel <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/bechdel.csv"
+```
+
+*** =sct
+```{r}
+msg_bad <- "That is not correct!"
+msg_success <- "This is tidy. Each of the three conditions for a tidy data set are met."
+test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
+```
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:262a102cfb
+## What's the observational unit?
+
+What is the observational unit in the `bechdel` data frame?
+
+*** =instructions
+- Budget of the movie
+- Movie
+- Whether or not a movie passes the Bechdel Test
+- None of the above
 
 *** =hint
 
@@ -136,5 +164,7 @@ bechdel <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Sto
 
 *** =sct
 ```{r}
-
+msg_bad <- "That is not correct!"
+msg_success <- "Each row corresponds to a different movie and the columns are measurements/characteristics of that movie."
+test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 ```
