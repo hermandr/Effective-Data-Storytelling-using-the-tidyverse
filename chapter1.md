@@ -1,14 +1,14 @@
 ---
-title       : Applying R basics
+title       : Applying R Basics
 description : Exploring the basics of R on a data set based on the fivethirtyeight.com "Most Police Don’t Live In The Cities They Serve" article.
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c306f947db
 ## Investigate the properties of a data frame
 
-Read over the 2014 article from FiveThirtyEight.com entitled "Most Police Don’t Live In The Cities They Serve" [here](http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/).  This article serves as an example of what I'd like you to be able to create by the end of the semester for your final project.  Police and their relationships with citizens has been a controversial topic for many years and has come to the forefront of American culture since the events of Ferguson, Missouri mentioned in this article.
+Read over the 2014 article from FiveThirtyEight.com entitled "Most Police Don’t Live In The Cities They Serve" [here](http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/).   Police and their relationships with citizens has been a controversial topic for many years and has come to the forefront of American culture since the events of Ferguson, Missouri mentioned in this article.
 
-The dataset corresponding to this article from the `fivethirtyeight` package has been loaded as a data frame called, `police_locals`, and is available in the workspace.
+The dataset corresponding to this article from the `fivethirtyeight` package has been loaded as a data frame with name `police_locals` and is available in the workspace.
 
 *** =instructions
 - Get the names of the columns/variables in `police_locals` using the `names` function.
