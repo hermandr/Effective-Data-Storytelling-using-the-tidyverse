@@ -92,11 +92,11 @@ as the *observational unit*.
 *** =pre_exercise_code
 ```{r}
 # You can also prepare your dataset in a specific way in the pre exercise code
-# library(fivethirtyeight)
-# data(police_locals)
+library(fivethirtyeight)
+data(police_locals)
 library(tibble)
-library(readr)
-police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
+#library(readr)
+#police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
 ```
 
 *** =sct

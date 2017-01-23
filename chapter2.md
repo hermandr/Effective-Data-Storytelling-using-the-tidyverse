@@ -6,18 +6,23 @@ description : Look into tidy data properties on data sets from fivethirtyeight.c
 --- type:NormalExercise lang:r xp:100 skills:1 key:fa48676309
 ## Joining data frames
 
-Recall the `police_locals` data frame you worked with in **Applying R Basics**.  There has been much discussion about
-the political divide that exists in the US.  A separate data frame has been loaded with the name `ideology` that lists cities, their state, and the political ideology of the state.  Created somewhat naively, a description of this `state_ideology` variable follows.
+Recall the `police_locals` data frame you worked with in **Applying R Basics**.  There has been
+much discussion about the political divide that exists in the US.  A separate data frame has been
+loaded with the name `ideology` that lists cities, their state, and the political ideology of the
+state.  Created somewhat naively, a description of this `state_ideology` variable follows.
 
-`state_ideology`:  For each city in the dataset, a lookup of the state the city resides in and the results 2016 Presidential election were given.  If Clinton won the state in 2016, `"Liberal"` is the value for `state_ideology`.  If Trump won the state in 2016, `"Conservative"` is the value for `state_ideology`.
-
-
+`state_ideology`:  For each city in the dataset, a lookup of the state the city resides in and
+the results of the 2016 Presidential election were given.  If Clinton won the state in 2016,
+`"Liberal"` is the value for `state_ideology`.  If Trump won the state in 2016, `"Conservative"`
+is the value for `state_ideology`.
 
 *** =instructions
-- Use the `inner_join` function in the `dplyr` package to add the `state` and `state_ideology` columns to the `police_locals` 
-where the key variable is `city` in both data frames.  
+- Use the `inner_join` function in the `dplyr` package to add the `state` and `state_ideology` 
+columns to the `police_locals` where the key variable is `city` in both data frames.  
 - Assign the name `police_join` to this expanded data frame.
-- Think about why it might be of value to link these two data sets together to analyze the relationship between `state_ideology` and percentage of police officers residing in the cities they serve by race.
+- Think about why it might be of value to link these two data sets together to analyze the
+relationship between `state_ideology` and percentage of police officers residing in the
+cities they serve by race.
 
 
 *** =hint
@@ -26,9 +31,9 @@ where the key variable is `city` in both data frames.
 
 *** =pre_exercise_code
 ```{r}
-library(readr)
-police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
-ideology <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/ideology.csv")
+library(fivethirtyeight)
+data(police_locals)
+ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
 ```
 
 *** =sample_code
@@ -59,9 +64,6 @@ test_function("inner_join", args = "by")
 ```
 
 
-
-
-
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:15cc059cea
 ## Change in observational unit?
 
@@ -79,13 +81,11 @@ Does the `police_join` data frame have a different observational unit than the `
 *** =pre_exercise_code
 ```{r}
 # You can also prepare your dataset in a specific way in the pre exercise code
-# library(fivethirtyeight)
-# data(police_locals)
+library(fivethirtyeight)
+data(police_locals)
 library(tibble)
-library(readr)
 library(dplyr)
-police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
-ideology <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/ideology.csv")
+ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
 police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 ```
 
@@ -105,7 +105,7 @@ Recall that a *tidy* data frame must have three properties:
 2. Each observation forms a row.
 3. Each type of observational unit forms a table.
 
-Is the `police_join` data frame created in the last exercise tidy?
+Is the `police_join` data frame created earlier tidy?
 
 (Recall that you can just enter `police_join` in the R Console and it will by default print the first
 few rows of the data frame for you.)
