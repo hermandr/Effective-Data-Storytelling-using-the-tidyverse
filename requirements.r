@@ -1,0 +1,5 @@
+devtools::install_version("tidyverse", "1.1.0")
+devtools::install_version("nycflights13", "0.2.1")
+devtools::install_version("okcupiddata", "0.1.0")
+devtools::install_version("fivethirtyeight", "0.1.0")
+devtools::install_version("babynames", "0.2.1")
