@@ -9,7 +9,7 @@ description : Look into tidy data properties on data sets from fivethirtyeight.c
 Recall the `police_locals` data frame you worked with in **Applying R Basics**.  There has been much discussion about
 the political divide that exists in the US.  A separate data frame has been loaded with the name `ideology` that lists cities, their state, and the political ideology of the state.  Created somewhat naively, a description of this `state_ideology` variable follows.
 
-`state_ideology`:  For each city in the dataset, a lookup of how the state the city resides in and the results 2012 Presidential election were given.  If Clinton won the state in 2016, `"Liberal"` is the value for `state_ideology`.  If Trump won the state in 2012, `"Conservative"` is the value for `state_ideology`.
+`state_ideology`:  For each city in the dataset, a lookup of the state the city resides in and the results 2016 Presidential election were given.  If Clinton won the state in 2016, `"Liberal"` is the value for `state_ideology`.  If Trump won the state in 2016, `"Conservative"` is the value for `state_ideology`.
 
 
 
@@ -60,6 +60,41 @@ test_function("inner_join", args = "by")
 
 
 
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:15cc059cea
+## Change in observational unit?
+
+Does the `police_join` data frame have a different observational unit than the `police_locals` data frame?
+
+*** =instructions
+- Yes, the observational unit is now **state**.
+- Yes, we have added rows to `police_join` so the observational unit must have changed.
+- No, the observational unit is still the same as it was for `police_locals`.
+- None of the above.
+
+*** =hint
+- Has the specific thing being measured changed by adding on the two variables of `state` and `state_ideology`?
+
+*** =pre_exercise_code
+```{r}
+# You can also prepare your dataset in a specific way in the pre exercise code
+# library(fivethirtyeight)
+# data(police_locals)
+library(tibble)
+library(readr)
+library(dplyr)
+police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
+ideology <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/ideology.csv")
+police_join <- inner_join(x = police_locals, y = ideology, by = "city")
+```
+
+*** =sct
+```{r}
+msg_bad <- "That is not correct!"
+msg_success <- "Each row still corresponds to a city.  The addition of the two columns only added attributes to the city."
+test_mc(correct = 3, feedback_msgs = c(msg_bad, msg_bad, msg_success, msg_bad))
+```
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:4399375881
 ## Is it tidy?
@@ -131,7 +166,8 @@ Is the `bechdel` data frame tidy?
 ```{r}
 # library(fivethirtyeight)
 # data(bechdel)
-bechdel <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/bechdel.csv"
+library(readr)
+bechdel <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/bechdel.csv")
 ```
 
 *** =sct
@@ -159,7 +195,8 @@ What is the observational unit in the `bechdel` data frame?
 ```{r}
 # library(fivethirtyeight)
 # data(bechdel)
-bechdel <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/bechdel.csv"
+library(readr)
+bechdel <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/bechdel.csv")
 ```
 
 *** =sct
