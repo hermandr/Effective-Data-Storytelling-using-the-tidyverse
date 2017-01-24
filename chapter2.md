@@ -182,7 +182,7 @@ test_function("library", args = "package",
               not_called_msg = "You didn't call `library(dplyr)`.  The `inner_join`
                 function exists in the `dplyr` package so you need to load `dplyr`
                 before you can use `inner_join`.",
-              incorrect_msg = "You didn't call `library(package = ...)` with the correct argument, `package`."))
+              incorrect_msg = "You didn't call `library(package = ...)` with the correct argument, `package`.")
 
 test_object("police_join_cost")
 test_error()
