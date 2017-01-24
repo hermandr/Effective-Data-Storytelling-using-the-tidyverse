@@ -171,7 +171,7 @@ cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/producti
 
 *** =sample_code
 ```{r}
-library(dplyr)
+
 ```
 
 *** =solution
