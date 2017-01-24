@@ -184,9 +184,9 @@ test_function("library", args = "package",
 
 #test_an_object("police_join_cost")
 test_error()
-test_function("inner_join", args = "x")
-test_function("inner_join", args = "y")
-test_function("inner_join", args = "by")
+#test_function("inner_join", args = "x")
+#test_function("inner_join", args = "y")
+#test_function("inner_join", args = "by")
 ```
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:285e794c07
