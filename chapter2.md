@@ -158,9 +158,8 @@ There may be many reasons for police officers to not live in the same cities as 
 library(fivethirtyeight)
 data(police_locals)
 library(readr)
-library(dplyr)
 ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
-police_join <- inner_join(x = police_locals, y = ideology, by = "city")
+police_join <- dplyr::inner_join(x = police_locals, y = ideology, by = "city")
 cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
 ```
 
@@ -180,8 +179,7 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 test_function("library", args = "package",
               not_called_msg = "You didn't call `library(dplyr)`.  The `inner_join`
                 function exists in the `dplyr` package so you need to load `dplyr`
-                before you can use `inner_join`.",
-              incorrect_msg = )
+                before you can use `inner_join`.")
 
 test_object("police_join_cost")
 test_error()
