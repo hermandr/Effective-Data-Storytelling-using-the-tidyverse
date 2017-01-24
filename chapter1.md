@@ -13,7 +13,7 @@ The dataset corresponding to this article from the `fivethirtyeight` package has
 *** =instructions
 - Get the names of the columns/variables in `police_locals` using the `names` function.
 - Check out the properties of `police_locals` using the `glimpse` function in the `tibble` package.
-- After running the code, think about why the variables in `police_locals` are the specific `class` they are coded as here (`char`, `int`, `double`).
+- THINK ABOUT IT:  After running the code, why are the variables in `police_locals` the specific `class` they are coded as here (`char`, `int`, `double`)?
 
 *** =hint
 - Use `names()`.  Note that what goes inside the `()` is the name of the data frame you'd like to examine the properties of.
@@ -192,7 +192,7 @@ In R, an index refers to the specific entry in an object.  As an example, in a v
 `my_vec <- c(200, 243, 78)`, index 1 corresponds to 200, index 2 corresponds to 243, and index 3 corresponds to 78.
 
 *** =instructions
-- Extract the police size forces corresponding to indices 14 to 39 in `police_locals` and assign the `pol_force` name to this subset.
+Extract the police size forces corresponding to indices 14 to 39 in `police_locals` and assign the `pol_force` name to this subset.
 
 *** =hint
 - Remember police size forces are giving in the `police_size_force` vector.

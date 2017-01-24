@@ -24,7 +24,7 @@ An interactive table of the `ideology` data frame is  [here](https://ismayc.gith
 - Use the `inner_join` function in the `dplyr` package to add the `state` and `state_ideology` 
 columns to the `police_locals` where the key variable is `city` in both data frames.  (Note the use of `library(dplyr)` here.  You will always need to load the package first if you would like to use the functions inside it.)
 - Assign the name `police_join` to this expanded data frame.
-- Think about why it might be of value to link these two data sets together to analyze the
+- THINK ABOUT IT:  How does linking these two data sets together to analyze the
 relationship between `state_ideology` and percentage of police officers residing in the
 cities they serve by race.
 
@@ -227,6 +227,7 @@ What is the observational unit in the `bechdel` [data frame]((https://ismayc.git
 - None of the above
 
 *** =hint
+- What is the "thing" being measured across each row by the variables?
 
 *** =pre_exercise_code
 ```{r}

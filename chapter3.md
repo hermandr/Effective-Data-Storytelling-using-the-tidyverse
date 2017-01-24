@@ -12,7 +12,11 @@ Suppose we are interested in analyzing the relationship between `all` and `index
 *** =instructions
 - What types of variables are `all` and `index`?  Use the `glimpse` function in the `tibble` package to find out.
 - Plot `index` on the horizontal axis and `all` on the vertical axis in an appropriate plot.
+- After looking over the plot, think about if this plot gives the relationship you expected (negative, positive, not much at all, etc.)
+
 *** =hint
+- The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
+- Remember that we use the `aes` function to map aesthetics.  Also be sure there are two )) at the end of the `ggplot` and `aes` calls.
 
 *** =pre_exercise_code
 ```{r}
@@ -30,11 +34,73 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 ```{r}
 # Find what types of variables `all` and `index` are.
 
+
 # Produce an appropriate plot by filling in the entries correctly
 ggplot(data = ,
-       aes(x = ,
+       mapping = aes(x = ,
            y = )) +
   geom_   ()
+```
+
+*** =solution
+```{r}
+# Find what types of variables `all` and `index` are.
+library(tibble)
+glimpse(police_join_cost)
+# Produce an appropriate plot by filling in the entries correctly below
+library(ggplot2)
+ggplot(data = police_join_cost,
+       mapping = aes(x = index,
+           y = all)) +
+  geom_point()
+```
+
+*** =sct
+```{r}
+test_library_function("tibble")
+test_library_function("ggplot2")
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
+
+test_error()
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:ujio5pauwu
+## Adding another variable
+
+Let's further look into the relationship between `all` and `index` in
+`police_join_cost`.  We also added the `state_ideology` variable with values of `"Conservative"` and `"Liberal"` using `inner_join` in a previous exercise.  Let's color
+the points in the plot based on whether or not the city selected
+
+*** =instructions
+- Plot `index` on the horizontal axis and `all` on the vertical axis in an appropriate plot.
+- Add `color` to the points based on values of `state_ideology`.
+- THINK ABOUT IT:  What stands out to you as you look over this plot?  How does adding the
+`state_ideology` help you better understand the relationships between the variables?
+
+*** =hint
+- The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
+- Remember that we also need to map aesthetics to the data using `aes`.  This is true for `x` and `y` and also for `color`.
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+data(police_locals)
+library(readr)
+library(dplyr)
+ideology <- read_csv("http://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/datasets/ideology.csv")
+police_join <- inner_join(x = police_locals, y = ideology, by = "city")
+cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
+police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
+```
+
+*** =sample_code
+```{r}
+# Produce an appropriate plot looking at the relationship between `index` and `all` colored based on the values of `state_ideology` filling in the entries correctly below
+ggplot(data = ,
+       mapping = aes(x = ,
+           y = )) +
+  geom_point(aes(color = ))
 ```
 
 *** =solution
@@ -45,16 +111,16 @@ glimpse(police_join_cost)
 # Produce an appropriate plot by filling in the entries correctly
 library(ggplot2)
 ggplot(data = police_join_cost,
-       aes(x = index,
+       mapping = aes(x = index,
            y = all)) +
-  geom_point()
+  geom_point(aes(color = state_ideology))
 ```
 
 *** =sct
 ```{r}
 test_library_function("tibble")
 test_library_function("ggplot2")
-test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
 
 test_error()
 ```
