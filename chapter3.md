@@ -1,5 +1,5 @@
 ---
-title       : Scatterplots via ggplot2
+title       : Scatter-plots and Line-graphs via ggplot2
 description : In this chapter we will create and analyze different plots using datasets in and derived from the fivethirtyeight R package
 
 
@@ -83,6 +83,65 @@ the points in the plot based on whether or not the city selected
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
 - Remember that we also need to map aesthetics to the data using `aes`.  This is true for `x` and `y` and also for `color`.
+- By default, `na.rm` is set to `FALSE` with `geom_point`.  You can specify it if you wish as `geom_point(na.rm = FALSE)` but you don't have to.
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+data(police_locals)
+library(readr)
+library(dplyr)
+ideology <- read_csv("http://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/datasets/ideology.csv")
+police_join <- inner_join(x = police_locals, y = ideology, by = "city")
+cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
+police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
+```
+
+*** =sample_code
+```{r}
+# Produce an appropriate plot looking at the relationship between `index` and `all` colored based on the values of `state_ideology` filling in the entries correctly below
+
+ggplot(data = ,
+       mapping = aes(x = ,
+           y = )) +
+  geom_point(aes(color = ))
+```
+
+*** =solution
+```{r}
+# Produce an appropriate plot by filling in the entries correctly
+library(ggplot2)
+ggplot(data = police_join_cost,
+       mapping = aes(x = index,
+           y = all)) +
+  geom_point(aes(color = state_ideology))
+```
+
+*** =sct
+```{r}
+test_library_function("ggplot2")
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
+
+test_error()
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:mhza74qwhy
+## Adding another variable
+
+Let's further look into the relationship between `all` and `index` in
+`police_join_cost`.  We also added the `state_ideology` variable with values of `"Conservative"` and `"Liberal"` using `inner_join` in a previous exercise.
+
+*** =instructions
+- Plot `index` on the horizontal axis and `all` on the vertical axis in an appropriate plot.
+- Add `color` to the points based on values of `state_ideology`.
+- Remember to add a call to `library` to include the specific package needed for graphics.
+- THINK ABOUT IT:  What stands out to you as you look over this plot?  How does adding the
+`state_ideology` help you better understand the relationships between the variables?
+
+*** =hint
+- The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
+- Remember that we also need to map aesthetics to the data using `aes`.  This is true for `x` and `y` and also for `color`.
+- By default, `na.rm` is set to `FALSE` with `geom_point`.  You can specify it if you wish as `geom_point(na.rm = FALSE)` but you don't have to.
 
 *** =pre_exercise_code
 ```{r}
