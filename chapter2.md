@@ -200,7 +200,7 @@ test_function("inner_join", args = "by")
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:285e794c07
 ## Is this tidy?
 
-Read over another 2014 article from FiveThirtyEight.com entitled "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women" [here](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/). We'll be working with a data frame used in this story called `bechdel` in the `fivethirtyeight` package throughout this DataCamp course.
+Read over another 2014 article from FiveThirtyEight.com entitled "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women" [here](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/). We'll be working with a data used in this story stored as a data frame with name `bechdel` in the `fivethirtyeight` package throughout this DataCamp course.
 
 Is the `bechdel` data frame tidy?  You can view an interactive table of it [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/bechdel.html).
 
