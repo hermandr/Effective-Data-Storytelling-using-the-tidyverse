@@ -41,7 +41,7 @@ ggplot(data = ,
 ```{r}
 # Find what types of variables `all` and `index` are.
 library(tibble)
-glance(police_join_cost)
+glimpse(police_join_cost)
 # Produce an appropriate plot by filling in the entries correctly
 ggplot(data = police_join_cost,
        aes(x = index,
