@@ -185,9 +185,10 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 test_function("library", args = "package",
               not_called_msg = "You didn't call `library(dplyr)`.  The `inner_join`
                 function exists in the `dplyr` package so you need to load `dplyr`
-                before you can use `inner_join`.")
+                before you can use `inner_join`.",
+              incorrect_msg = )
 
-test_object("police_join_cost")
+#test_object("police_join_cost")
 test_error()
 test_function("inner_join", args = "x")
 test_function("inner_join", args = "y")
