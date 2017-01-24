@@ -4,7 +4,7 @@ description : In this chapter we will create and analyze different plots using d
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:bl30sh3qn6
-## Looking at relationships in `police_join_cost` - `all` versus `index`
+## Comparing quantitative variables
 
 Suppose we are interested in analyzing the relationship between `all` and `index` in the
 `police_join_cost`.
@@ -43,6 +43,7 @@ ggplot(data = ,
 library(tibble)
 glimpse(police_join_cost)
 # Produce an appropriate plot by filling in the entries correctly
+library(ggplot2)
 ggplot(data = police_join_cost,
        aes(x = index,
            y = all)) +
@@ -52,7 +53,7 @@ ggplot(data = police_join_cost,
 *** =sct
 ```{r}
 test_library_function("tibble")
-
+test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 
 test_error()
