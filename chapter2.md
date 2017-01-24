@@ -164,7 +164,7 @@ library(fivethirtyeight)
 data(police_locals)
 library(readr)
 ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
-police_join <- inner_join(x = police_locals, y = ideology, by = "city")
+police_join <- dplyr::inner_join(x = police_locals, y = ideology, by = "city")
 cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
 ```
 
