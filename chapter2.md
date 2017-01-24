@@ -147,7 +147,7 @@ test_mc(correct = 3, feedback_msgs = c(msg_bad, msg_bad, msg_success, msg_bad))
 --- type:NormalExercise lang:r xp:100 skills:1 key:ca52fa48aa
 ## Another join
 
-There may be many reasons for police officers to not live in the same cities as they serve.  One potential reason that has been suggested is that the cost of living in some areas is much higher than in other nearby areas.  The Missouri Economic Resarch and Information Center created a table of the **Composite Cost of Living (Scaled)** for the third quarter of 2016 [here](https://www.missourieconomy.org/indicators/cost_of_living/index.stm).  This data has been loaded as a data frame with the name `cost_of_living` available to view [here](.  As shown on the map at the link, the overall `index` is given in `cost_of_living` for each state and categories of `"high"`, `"mid"`, and `"low"` are created in the `col_group` variable following the ranges on the map.
+There may be many reasons for police officers to not live in the same cities as they serve.  One potential reason that has been suggested is that the cost of living in some areas is much higher than in other nearby areas.  The Missouri Economic Resarch and Information Center created a table of the **Composite Cost of Living (Scaled)** for the third quarter of 2016 [here](https://www.missourieconomy.org/indicators/cost_of_living/index.stm).  This data has been loaded as a data frame with the name `cost_of_living` available to view [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/cost_of_living.html) .  As shown on the map at the link, the overall `index` is given in `cost_of_living` for each state and categories of `"high"`, `"mid"`, and `"low"` are created in the `col_group` variable following the ranges on the map.
 
 *** =instructions
 - Use the `inner_join` function in the `dplyr` package to lookup and add the `index` and `col_group` variables to the `police_join` data frame.  (Note that you'll need to think about what the key variable is here.)
@@ -158,29 +158,47 @@ There may be many reasons for police officers to not live in the same cities as 
 
 *** =pre_exercise_code
 ```{r}
+library(fivethirtyeight)
+data(police_locals)
+library(tibble)
+library(dplyr)
+ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
+police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
 ```
 
 *** =sample_code
 ```{r}
-
+library(dplyr)
 ```
 
 *** =solution
 ```{r}
-
+library(dplyr)
+police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
 ```
 
 *** =sct
 ```{r}
+test_function("library", args = "package",
+              not_called_msg = "You didn't call `library()`! Remember that if a function exists in a package
+              and you are using that function that you need to make sure to load that package via `library()`.",
+              incorrect_msg = "You didn't call `library(dplyr)`.  The `inner_join` function exists in the `dplyr`
+              package so you need to load `dplyr` before you can use `inner_join`.")
 
+test_object("police_join_cost")
+test_error()
+test_function("inner_join", args = "x")
+test_function("inner_join", args = "y")
+test_function("inner_join", args = "by")
 ```
+
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:285e794c07
 ## Is this tidy?
 
 Read over another 2014 article from FiveThirtyEight.com entitled "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women" [here](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/). We'll be working with a data frame used in this story called `bechdel` in the `fivethirtyeight` package throughout this DataCamp course.
 
-Is the `bechdel` data frame tidy?  
+Is the `bechdel` data frame tidy?  You can view an interactive table of it [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/bechdel.html).
 
 *** =instructions
 - Yes, it is neat and easy-to-read.
@@ -189,14 +207,11 @@ Is the `bechdel` data frame tidy?
 - None of the above are correct.
 
 *** =hint
-- You can find help on `bechdel` on page 6 [here](https://cran.r-project.org/web/packages/fivethirtyeight/fivethirtyeight.pdf) or by using `?bechdel`.
-
+- You can find help on `bechdel` via `?bechdel` in the R console.
 *** =pre_exercise_code
 ```{r}
-# library(fivethirtyeight)
-# data(bechdel)
-library(readr)
-bechdel <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/bechdel.csv")
+library(fivethirtyeight)
+data(bechdel)
 ```
 
 *** =sct
@@ -210,7 +225,7 @@ test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:262a102cfb
 ## What's the observational unit?
 
-What is the observational unit in the `bechdel` data frame?
+What is the observational unit in the `bechdel` [data frame]((https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/bechdel.html)?
 
 *** =instructions
 - Budget of the movie
@@ -222,10 +237,8 @@ What is the observational unit in the `bechdel` data frame?
 
 *** =pre_exercise_code
 ```{r}
-# library(fivethirtyeight)
-# data(bechdel)
-library(readr)
-bechdel <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/bechdel.csv")
+library(fivethirtyeight)
+data(bechdel)
 ```
 
 *** =sct
