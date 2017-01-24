@@ -136,15 +136,10 @@ police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 
 *** =sct
 ```{r}
-# SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
-
 msg_bad <- "That is not correct!"
 msg_success <- "This is not tidy. The `race` variable is distributed across multiple columns and, thus, violates 'Each variable forms a column.'"
 test_mc(correct = 3, feedback_msgs = c(msg_bad, msg_bad, msg_success, msg_bad))
 ```
-
-
-
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:ca52fa48aa
 ## Another join
@@ -163,8 +158,9 @@ There may be many reasons for police officers to not live in the same cities as 
 library(fivethirtyeight)
 data(police_locals)
 library(readr)
+library(dplyr)
 ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
-police_join <- dplyr::inner_join(x = police_locals, y = ideology, by = "city")
+police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
 ```
 
@@ -187,7 +183,7 @@ test_function("library", args = "package",
                 before you can use `inner_join`.",
               incorrect_msg = )
 
-#test_object("police_join_cost")
+test_object("police_join_cost")
 test_error()
 test_function("inner_join", args = "x")
 test_function("inner_join", args = "y")
