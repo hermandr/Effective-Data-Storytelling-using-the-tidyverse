@@ -162,7 +162,6 @@ There may be many reasons for police officers to not live in the same cities as 
 ```{r}
 library(fivethirtyeight)
 data(police_locals)
-library(dplyr)
 library(readr)
 ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
 police_join <- inner_join(x = police_locals, y = ideology, by = "city")
