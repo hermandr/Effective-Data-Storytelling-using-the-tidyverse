@@ -6,7 +6,9 @@ description : Look into tidy data properties on data sets from fivethirtyeight.c
 --- type:NormalExercise lang:r xp:100 skills:1 key:fa48676309
 ## Joining data frames
 
-Recall the `police_locals` data frame you worked with in **Applying R Basics**  [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_locals.html).  There has been
+Recall the `police_locals` data frame you worked with in **Applying R Basics** as an interactive table [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_locals.html).  
+
+There has been
 much discussion about the political divide that exists in the US.  A separate data frame has been
 loaded with the name `ideology` that lists cities, their state, and the political ideology of the
 state.  Created somewhat naively, a description of this `state_ideology` variable follows.
@@ -15,6 +17,8 @@ state.  Created somewhat naively, a description of this `state_ideology` variabl
 the results of the 2016 Presidential election were given.  If Clinton won the state in 2016,
 `"Liberal"` is the value for `state_ideology`.  If Trump won the state in 2016, `"Conservative"`
 is the value for `state_ideology`.
+
+An interactive table of the `ideology` data frame is  [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/ideology.html).
 
 *** =instructions
 - Use the `inner_join` function in the `dplyr` package to add the `state` and `state_ideology` 
@@ -77,10 +81,10 @@ Does the `police_join` data frame have a different observational unit than the `
 
 *** =hint
 - Has the specific thing being measured changed by adding on the two variables of `state` and `state_ideology`?
+- You can view the `police_join` data frame [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_join.html).
 
 *** =pre_exercise_code
 ```{r}
-# You can also prepare your dataset in a specific way in the pre exercise code
 library(fivethirtyeight)
 data(police_locals)
 library(tibble)
@@ -105,10 +109,7 @@ Recall that a *tidy* data frame must have three properties:
 2. Each observation forms a row.
 3. Each type of observational unit forms a table.
 
-Is the `police_join` data frame created earlier tidy?
-
-(Recall that you can just enter `police_join` in the R Console and it will by default print the first
-few rows of the data frame for you.)
+Is the `police_join` [data frame](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_join.html) tidy?
 
 *** =instructions
 - Yes, it is neat and easy-to-read.
@@ -118,20 +119,16 @@ few rows of the data frame for you.)
 
 
 *** =hint
-- You might want to use `names(police_join)` to get a listing of the different column names.
 - Is each column of `police_join` a variable? Or is one variable spread across multiple columns?
 
 
 *** =pre_exercise_code
 ```{r}
-# You can also prepare your dataset in a specific way in the pre exercise code
-# library(fivethirtyeight)
-# data(police_locals)
+library(fivethirtyeight)
+data(police_locals)
 library(tibble)
-library(readr)
 library(dplyr)
-police_locals <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/police_locals.csv")
-ideology <- read_csv("https://raw.githubusercontent.com/ismayc/Effective-Data-Storytelling-using-the-tidyverse/master/datasets/ideology.csv")
+ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
 police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 ```
 
@@ -150,7 +147,7 @@ test_mc(correct = 3, feedback_msgs = c(msg_bad, msg_bad, msg_success, msg_bad))
 --- type:NormalExercise lang:r xp:100 skills:1 key:ca52fa48aa
 ## Another join
 
-There may be many reasons for police officers to not live in the same cities as they serve.  One potential reason that has been suggested is that the cost of living in some areas is much higher than in other nearby areas.  The Missouri Economic Resarch and Information Center created a table of the **Composite Cost of Living (Scaled)** for the third quarter of 2016 [here](https://www.missourieconomy.org/indicators/cost_of_living/index.stm).  This data has been loaded as a data frame with the name `cost_of_living`.  As shown on the map at the link, the overall `index` is given in `cost_of_living` for each state and categories of `"high"`, `"mid"`, and `"low"` are created in the `col_group` variable following the ranges on the map.
+There may be many reasons for police officers to not live in the same cities as they serve.  One potential reason that has been suggested is that the cost of living in some areas is much higher than in other nearby areas.  The Missouri Economic Resarch and Information Center created a table of the **Composite Cost of Living (Scaled)** for the third quarter of 2016 [here](https://www.missourieconomy.org/indicators/cost_of_living/index.stm).  This data has been loaded as a data frame with the name `cost_of_living` available to view [here](.  As shown on the map at the link, the overall `index` is given in `cost_of_living` for each state and categories of `"high"`, `"mid"`, and `"low"` are created in the `col_group` variable following the ranges on the map.
 
 *** =instructions
 - Use the `inner_join` function in the `dplyr` package to lookup and add the `index` and `col_group` variables to the `police_join` data frame.  (Note that you'll need to think about what the key variable is here.)
@@ -159,11 +156,9 @@ There may be many reasons for police officers to not live in the same cities as 
 *** =hint
 - Remember to use `?inner_join` to get help as to what to provide as arguments to the function.
 
-*** =hint
-
 *** =pre_exercise_code
 ```{r}
-
+cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
 ```
 
 *** =sample_code
