@@ -3,7 +3,7 @@ title       : Scatterplots via ggplot2
 description : In this chapter we will create and analyze different plots using datasets in and derived from the fivethirtyeight R package
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:bl30sh3qn6
+--- type:NormalExercise lang:r xp:100 skills:1 key:bl30sh3qn6
 ## Looking at relationships in `police_join_cost` - `all` versus `index`
 
 Suppose we are interested in analyzing the relationship between `all` and `index` in the
