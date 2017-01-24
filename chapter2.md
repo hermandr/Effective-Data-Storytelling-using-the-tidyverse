@@ -36,7 +36,9 @@ cities they serve by race.
 *** =pre_exercise_code
 ```{r}
 library(fivethirtyeight)
+library(readr)
 data(police_locals)
+library(readr)
 ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
 ```
 
@@ -87,8 +89,8 @@ Does the `police_join` data frame have a different observational unit than the `
 ```{r}
 library(fivethirtyeight)
 data(police_locals)
-library(tibble)
 library(dplyr)
+library(readr)
 ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
 police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 ```
@@ -126,8 +128,8 @@ Is the `police_join` [data frame](https://ismayc.github.io/Effective-Data-Storyt
 ```{r}
 library(fivethirtyeight)
 data(police_locals)
-library(tibble)
 library(dplyr)
+library(readr)
 ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
 police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 ```
@@ -160,8 +162,8 @@ There may be many reasons for police officers to not live in the same cities as 
 ```{r}
 library(fivethirtyeight)
 data(police_locals)
-library(tibble)
 library(dplyr)
+library(readr)
 ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
 police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
