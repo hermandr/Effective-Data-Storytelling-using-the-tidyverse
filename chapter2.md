@@ -22,7 +22,7 @@ An interactive table of the `ideology` data frame is  [here](https://ismayc.gith
 
 *** =instructions
 - Use the `inner_join` function in the `dplyr` package to add the `state` and `state_ideology` 
-columns to the `police_locals` where the key variable is `city` in both data frames.  
+columns to the `police_locals` where the key variable is `city` in both data frames.  (Note the use of `library(dplyr)` here.  You will always need to load the package first if you would like to use the functions inside it.)
 - Assign the name `police_join` to this expanded data frame.
 - Think about why it might be of value to link these two data sets together to analyze the
 relationship between `state_ideology` and percentage of police officers residing in the
@@ -136,15 +136,10 @@ police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 
 *** =sct
 ```{r}
-# SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
-
 msg_bad <- "That is not correct!"
 msg_success <- "This is not tidy. The `race` variable is distributed across multiple columns and, thus, violates 'Each variable forms a column.'"
 test_mc(correct = 3, feedback_msgs = c(msg_bad, msg_bad, msg_success, msg_bad))
 ```
-
-
-
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:ca52fa48aa
 ## Another join
@@ -153,7 +148,7 @@ There may be many reasons for police officers to not live in the same cities as 
 
 *** =instructions
 - Use the `inner_join` function in the `dplyr` package to lookup and add the `index` and `col_group` variables to the `police_join` data frame.  (Note that you'll need to think about what the key variable is here.)
-- Assign the name `police_join_cost` to this expanded data frame.
+- Assign a name of your choosing to this expanded data frame.
 
 *** =hint
 - Remember to use `?inner_join` to get help as to what to provide as arguments to the function.
@@ -162,11 +157,12 @@ There may be many reasons for police officers to not live in the same cities as 
 ```{r}
 library(fivethirtyeight)
 data(police_locals)
-library(dplyr)
 library(readr)
-ideology <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/ideology.csv")
+library(dplyr)
+ideology <- read_csv("http://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/datasets/ideology.csv")
 police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
+detach("package:dplyr", unload = TRUE)
 ```
 
 *** =sample_code
@@ -182,13 +178,8 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 
 *** =sct
 ```{r}
-test_function("library", args = "package",
-              not_called_msg = "You didn't call `library()`! Remember that if a function exists in a package
-              and you are using that function that you need to make sure to load that package via `library()`.",
-              incorrect_msg = "You didn't call `library(dplyr)`.  The `inner_join` function exists in the `dplyr`
-              package so you need to load `dplyr` before you can use `inner_join`.")
-
-test_object("police_join_cost")
+test_library_function("dplyr")
+test_an_object("police_join_cost")
 test_error()
 test_function("inner_join", args = "x")
 test_function("inner_join", args = "y")
@@ -198,7 +189,7 @@ test_function("inner_join", args = "by")
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:285e794c07
 ## Is this tidy?
 
-Read over another 2014 article from FiveThirtyEight.com entitled "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women" [here](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/). We'll be working with a data frame used in this story called `bechdel` in the `fivethirtyeight` package throughout this DataCamp course.
+Read over another 2014 article from FiveThirtyEight.com entitled "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women" [here](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/). We'll be working with a data used in this story stored as a data frame with name `bechdel` in the `fivethirtyeight` package throughout this DataCamp course.
 
 Is the `bechdel` data frame tidy?  You can view an interactive table of it [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/bechdel.html).
 
