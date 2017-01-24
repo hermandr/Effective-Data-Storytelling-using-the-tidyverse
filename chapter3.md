@@ -7,16 +7,16 @@ description : In this chapter we will create and analyze different plots using d
 ## Comparing quantitative variables
 
 Suppose we are interested in analyzing the relationship between `all` and `index` in the
-`police_join_cost`.
+`police_join_cost` data frame.
 
 *** =instructions
 - What types of variables are `all` and `index`?  Use the `glimpse` function in the `tibble` package to find out.
 - Plot `index` on the horizontal axis and `all` on the vertical axis in an appropriate plot.
-- After looking over the plot, think about if this plot gives the relationship you expected (negative, positive, not much at all, etc.)
+- THINK ABOUT IT:  After looking over the plot, is it the type of relationship you expected (negative, positive, not much at all, etc.)?
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
-- Remember that we use the `aes` function to map aesthetics.  Also be sure there are two )) at the end of the `ggplot` and `aes` calls.
+- Remember that we use the `aes` function to map aesthetics.  Also be sure there are two `))` before the `+`:  one for the `ggplot` call and one for the `aes` call.
 
 *** =pre_exercise_code
 ```{r}
@@ -36,6 +36,7 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 
 
 # Produce an appropriate plot by filling in the entries correctly
+library(ggplot2)
 ggplot(data = ,
        mapping = aes(x = ,
            y = )) +
@@ -75,6 +76,7 @@ the points in the plot based on whether or not the city selected
 *** =instructions
 - Plot `index` on the horizontal axis and `all` on the vertical axis in an appropriate plot.
 - Add `color` to the points based on values of `state_ideology`.
+- Remember to add a call to `library` to include the specific package needed for graphics.
 - THINK ABOUT IT:  What stands out to you as you look over this plot?  How does adding the
 `state_ideology` help you better understand the relationships between the variables?
 
@@ -97,6 +99,7 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 *** =sample_code
 ```{r}
 # Produce an appropriate plot looking at the relationship between `index` and `all` colored based on the values of `state_ideology` filling in the entries correctly below
+
 ggplot(data = ,
        mapping = aes(x = ,
            y = )) +
@@ -105,9 +108,6 @@ ggplot(data = ,
 
 *** =solution
 ```{r}
-# Find what types of variables `all` and `index` are.
-library(tibble)
-glimpse(police_join_cost)
 # Produce an appropriate plot by filling in the entries correctly
 library(ggplot2)
 ggplot(data = police_join_cost,
@@ -118,7 +118,6 @@ ggplot(data = police_join_cost,
 
 *** =sct
 ```{r}
-test_library_function("tibble")
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
 
