@@ -22,7 +22,7 @@ An interactive table of the `ideology` data frame is  [here](https://ismayc.gith
 
 *** =instructions
 - Use the `inner_join` function in the `dplyr` package to add the `state` and `state_ideology` 
-columns to the `police_locals` where the key variable is `city` in both data frames.  
+columns to the `police_locals` where the key variable is `city` in both data frames.  (Note the use of `library(dplyr)` here.  You will always need to load the package first if you would like to use the functions inside it.)
 - Assign the name `police_join` to this expanded data frame.
 - Think about why it might be of value to link these two data sets together to analyze the
 relationship between `state_ideology` and percentage of police officers residing in the
@@ -183,10 +183,12 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 *** =sct
 ```{r}
 test_function("library", args = "package",
-              not_called_msg = "You didn't call `library()`! Remember that if a function exists in a package
-              and you are using that function that you need to make sure to load that package via `library()`.",
-              incorrect_msg = "You didn't call `library(dplyr)`.  The `inner_join` function exists in the `dplyr`
-              package so you need to load `dplyr` before you can use `inner_join`.")
+              not_called_msg = "You didn't call `library(dplyr)`.  The `inner_join`
+                function exists in the `dplyr` package so you need to load `dplyr`
+                before you can use `inner_join`.",
+              incorrect_msg = "You didn't call `library(dplyr)`.  The `inner_join`
+                function exists in the `dplyr` package so you need to load `dplyr`
+                before you can use `inner_join`.")
 
 test_object("police_join_cost")
 test_error()
