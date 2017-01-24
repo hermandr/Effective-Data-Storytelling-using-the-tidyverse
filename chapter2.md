@@ -148,7 +148,7 @@ There may be many reasons for police officers to not live in the same cities as 
 
 *** =instructions
 - Use the `inner_join` function in the `dplyr` package to lookup and add the `index` and `col_group` variables to the `police_join` data frame.  (Note that you'll need to think about what the key variable is here.)
-- Assign the name `police_join_cost` to this expanded data frame.
+- Assign a name of your choosing to this expanded data frame.
 
 *** =hint
 - Remember to use `?inner_join` to get help as to what to provide as arguments to the function.
@@ -173,7 +173,7 @@ detach("package:dplyr", unload = TRUE)
 *** =solution
 ```{r}
 library(dplyr)
-police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
+inner_join(x = police_join, y = cost_of_living, by = "state")
 ```
 
 *** =sct
@@ -182,7 +182,7 @@ test_function("library", args = "package",
               not_called_msg = "You didn't call `library(dplyr)`.  The `inner_join` function exists in the `dplyr` package so you need to load `dplyr` before you can use `inner_join`.",
               incorrect_msg = "You didn't call `library(package = ...)` with the correct argument, `package`.")
 
-test_object("police_join_cost")
+test_an_object("police_join_cost")
 test_error()
 test_function("inner_join", args = "x")
 test_function("inner_join", args = "y")
