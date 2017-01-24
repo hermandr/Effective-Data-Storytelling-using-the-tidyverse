@@ -2,7 +2,7 @@ city,state,state_ideology
 New York,New York,Liberal
 Chicago,Illinois,Liberal
 Los Angeles,California,Liberal
-Washington,DC,Liberal
+Washington,District of Columbia,Liberal
 Houston,Texas,Conservative
 Philadelphia,Pennsylvania,Conservative
 Phoenix,Arizona,Conservative
@@ -56,7 +56,7 @@ Cincinnati,Ohio,Conservative
 "Virginia Beach, Va.",Virginia,Liberal
 "Fresno, Calif.",California,Liberal
 "Buffalo, N.Y.",New York,Liberal
-Minneapolis,Minneapolis,Liberal
+Minneapolis,Minnesota,Liberal
 "Portland, Ore.",Oregon,Liberal
 "Reno, Nev.",Nevada,Liberal
 "Richmond, Va.",Virginia,Liberal

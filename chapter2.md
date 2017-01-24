@@ -173,7 +173,7 @@ detach("package:dplyr", unload = TRUE)
 *** =solution
 ```{r}
 library(dplyr)
-inner_join(x = police_join, y = cost_of_living, by = "state")
+police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
 ```
 
 *** =sct
