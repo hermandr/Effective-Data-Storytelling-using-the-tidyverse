@@ -136,7 +136,7 @@ on the 2014 births we also introduce a new function called `filter` and the `%>%
 
 *** =instructions
 - Plot `births` on the vertical axis and `date` on the horizontal axis using a line for the geometry.
-- THINK ABOUT IT:  This isn't a very pretty plot to look at. Why is there so much "up-and-down" in the plot?
+- THINK ABOUT IT:  This isn't a very pretty plot to look at. Why is there so much "up-and-down" in the plot?  What makes this plot hard to look at?
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
@@ -164,8 +164,8 @@ library(ggplot2)
 US_births_2014 <- US_births_2000_2014 %>% filter(year == 2014)
 ggplot(data = US_births_2014,
        mapping = aes(x = date,
-           y = all)) +
-  geom_point(aes(color = state_ideology))
+           y = births)) +
+  geom_line()
 ```
 
 *** =sct
