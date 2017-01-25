@@ -32,7 +32,7 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 
 *** =sample_code
 ```{r}
-# Find what types of variables `all` and `index` are.
+# Find out what types of variables `all` and `index` are.
 
 
 # Produce an appropriate plot by filling in the entries correctly
