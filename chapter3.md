@@ -132,7 +132,7 @@ test_error()
 
 We now shift our analysis to looking at babies born in the US in 2014 by day.  This data is stored
 in the `US_births_2000_2014` data frame in the `fivethirtyeight` package.  In order to isolate only
-on the 2014 births we also introduce a new function called `filter` and the `%>%` (pipe) operator that you'll explore more later in the course.  You can view the resulting `US_births_2014` data frame interactively [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/US_births_2014.html)
+on the 2014 births we also introduce a new function called `filter` in the `dplyr` package and the `%>%` (pipe) operator that you'll explore more later in the course.  You can view the resulting `US_births_2014` data frame interactively [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/US_births_2014.html).
 
 *** =instructions
 - Plot `births` on the vertical axis and `date` on the horizontal axis using a line for the geometry.
