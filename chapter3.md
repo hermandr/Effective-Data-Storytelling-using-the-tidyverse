@@ -193,6 +193,7 @@ Recall that the line-graph in the last exercise had some strange features to it.
 
 *** =pre_exercise_code
 ```{r}
+library(dplyr)
 US_births_2014 <- US_births_2000_2014 %>% filter(year == 2014)
 ```
 
