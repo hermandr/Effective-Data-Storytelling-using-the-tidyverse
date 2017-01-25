@@ -1,3 +1,3 @@
 ---
-title       : Histograms & Boxplots
+title       : Simulating randomness
 description : Insert the chapter description here

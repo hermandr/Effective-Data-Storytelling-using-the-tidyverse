@@ -1,3 +1,3 @@
 ---
-title       : Histograms & Boxplots
+title       : Confidence intervals
 description : Insert the chapter description here
