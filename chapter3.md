@@ -4,7 +4,7 @@ description : In this chapter we will create and analyze different plots using d
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:bl30sh3qn6
-## Comparing quantitative variables
+## Relationship between quantitative variables
 
 Suppose we are interested in analyzing the relationship between `all` and `index` in the
 `police_join_cost` data frame.
@@ -99,7 +99,9 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 
 *** =sample_code
 ```{r}
-# Produce an appropriate plot looking at the relationship between `index` and `all` colored based on the values of `state_ideology` filling in the entries correctly below
+# Produce an appropriate plot looking at the relationship between
+# `index` and `all` colored based on the values of `state_ideology`
+# filling in the entries correctly below
 
 ggplot(data = ,
        mapping = aes(x = ,
@@ -158,7 +160,7 @@ US_births_2014 <- US_births_2000_2014 %>% filter(year == 2014)
 ```{r}
 # Produce an appropriate plot by filling in the entries correctly
 library(dplyr)
-library()
+library(ggplot2)
 US_births_2014 <- US_births_2000_2014 %>% filter(year == 2014)
 ggplot(data = US_births_2014,
        mapping = aes(x = date,
