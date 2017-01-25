@@ -1,6 +1,6 @@
 ---
 title       : Scatter-plots & Line-graphs
-description : In this chapter we will create and analyze different plots using the `ggplot2` package using datasets in and derived from the fivethirtyeight R package
+description : In this chapter we will create and analyze different plots via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:bl30sh3qn6
