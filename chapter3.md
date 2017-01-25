@@ -128,7 +128,7 @@ test_error()
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:mhza74qwhy
-## Babies born over time - line-graph
+## Babies born over time (line-graph)
 
 We now shift our analysis to looking at babies born in the US in 2014 by day.  This data is stored
 in the `US_births_2000_2014` data frame in the `fivethirtyeight` package.  In order to isolate only
@@ -176,3 +176,50 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
+--- type:NormalExercise lang:r xp:100 skills:1 key:v9lwv5gk0y
+## Babies born over time (scatter-plot)
+
+Recall that the line-graph in the last exercise had some strange features to it.  Let's explore what the points themselves look like and then color the points based on another variable in the second plot.  The `US_births_2014` data frame has been loaded for you already.
+
+*** =instructions
+- Plot `births` on the vertical axis and `date` on the horizontal axis using a point for the geometry.
+- THINK ABOUT IT:  Now that you've produced this scatter-plot, why were the lines going up and down across the plot?
+- Plot `births` on the vertical axis and `date` on the horizontal axis as a scatter-plot.  Then color the points based on `day_of_week`.
+- THINK ABOUT IT:  How does this coloring help to understand the distribution of births across the year?  Can you identify the points that don't follow the patterns and what days they correspond to?
+
+*** =hint
+- The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
+- Remember that we also need to map aesthetics to the data using the `aes` function.
+
+*** =pre_exercise_code
+```{r}
+US_births_2014 <- US_births_2000_2014 %>% filter(year == 2014)
+```
+
+*** =sample_code
+```{r}
+
+
+```
+
+*** =solution
+```{r}
+# Produce an appropriate plot by filling in the entries correctly
+library(ggplot2)
+ggplot(data = US_births_2014,
+       mapping = aes(x = date,
+           y = births)) +
+  geom_point()
+ggplot(data = US_births_2014,
+       mapping = aes(x = date,
+           y = births)) +
+  geom_point(aes(color = day_of_week))  
+```
+
+*** =sct
+```{r}
+test_library_function("ggplot2")
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
+
+test_error()
+```
