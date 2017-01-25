@@ -83,7 +83,7 @@ the points in the plot based on whether or not the city selected
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
 - Remember that we also need to map aesthetics to the data using `aes`.  This is true for `x` and `y` and also for `color`.
-- By default, `na.rm` is set to `FALSE` with `geom_point`.  You can specify it if you wish as `geom_point(na.rm = FALSE)` but you don't have to.
+- By default, `na.rm` is set to `FALSE` by default with `geom_point`.  You can specify it if you wish as `geom_point(na.rm = FALSE)` but you don't have to.
 
 *** =pre_exercise_code
 ```{r}
@@ -126,51 +126,42 @@ test_error()
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:mhza74qwhy
-## Adding another variable
+## Babies born over time - line-graph
 
-Let's further look into the relationship between `all` and `index` in
-`police_join_cost`.  We also added the `state_ideology` variable with values of `"Conservative"` and `"Liberal"` using `inner_join` in a previous exercise.
+We now shift our analysis to looking at babies born in the US in 2014 by day.  This data is stored
+in the `US_births_2000_2014` data frame in the `fivethirtyeight` package.  In order to isolate only
+on the 2014 births we also introduce a new function called `filter` and the `%>%` (pipe) operator that you'll explore more later in the course.  You can view the resulting `US_births_2014` data frame interactively [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/US_births_2014.html)
 
 *** =instructions
-- Plot `index` on the horizontal axis and `all` on the vertical axis in an appropriate plot.
-- Add `color` to the points based on values of `state_ideology`.
-- Remember to add a call to `library` to include the specific package needed for graphics.
-- THINK ABOUT IT:  What stands out to you as you look over this plot?  How does adding the
-`state_ideology` help you better understand the relationships between the variables?
+- Plot `births` on the vertical axis and `date` on the horizontal axis using a line for the geometry.
+- THINK ABOUT IT:  This isn't a very pretty plot to look at. Why is there so much "up-and-down" in the plot?
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
-- Remember that we also need to map aesthetics to the data using `aes`.  This is true for `x` and `y` and also for `color`.
-- By default, `na.rm` is set to `FALSE` with `geom_point`.  You can specify it if you wish as `geom_point(na.rm = FALSE)` but you don't have to.
+- Remember that we also need to map aesthetics to the data using the `aes` function.
 
 *** =pre_exercise_code
 ```{r}
 library(fivethirtyeight)
-data(police_locals)
-library(readr)
-library(dplyr)
-ideology <- read_csv("http://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/datasets/ideology.csv")
-police_join <- inner_join(x = police_locals, y = ideology, by = "city")
-cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
-police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
+data(US_births_2000_2014)
 ```
 
 *** =sample_code
 ```{r}
-# Produce an appropriate plot looking at the relationship between `index` and `all` colored based on the values of `state_ideology` filling in the entries correctly below
+library(dplyr)
+library()
+US_births_2014 <- US_births_2000_2014 %>% filter(year == 2014)
 
-ggplot(data = ,
-       mapping = aes(x = ,
-           y = )) +
-  geom_point(aes(color = ))
 ```
 
 *** =solution
 ```{r}
 # Produce an appropriate plot by filling in the entries correctly
-library(ggplot2)
-ggplot(data = police_join_cost,
-       mapping = aes(x = index,
+library(dplyr)
+library()
+US_births_2014 <- US_births_2000_2014 %>% filter(year == 2014)
+ggplot(data = US_births_2014,
+       mapping = aes(x = date,
            y = all)) +
   geom_point(aes(color = state_ideology))
 ```
@@ -178,7 +169,8 @@ ggplot(data = police_join_cost,
 *** =sct
 ```{r}
 test_library_function("ggplot2")
-test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 
 test_error()
 ```
+
