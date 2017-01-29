@@ -1,6 +1,6 @@
 ---
 title       : Scatter-plots & Line-graphs
-description : In this chapter we will create and analyze different plots using the `ggplot2` package using datasets in and derived from the fivethirtyeight R package
+description : In this chapter we will create and analyze different plots via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:bl30sh3qn6
@@ -32,7 +32,7 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 
 *** =sample_code
 ```{r}
-# Find what types of variables `all` and `index` are.
+# Find out what types of variables `all` and `index` are.
 
 
 # Produce an appropriate plot by filling in the entries correctly
