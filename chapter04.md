@@ -48,7 +48,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:yl6eto7bme
+--- type:NormalExercise lang:r xp:100 skills:1 key:80cf9c93cf
 
 ## Making an appropriate plot
 
