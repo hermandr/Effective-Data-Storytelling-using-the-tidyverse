@@ -126,9 +126,10 @@ It would make more sense to have a variable called `race` with entries of `white
 *** =pre_exercise_code
 ```{r}
 library(fivethirtyeight)
-data(police_locals)
 library(readr)
 library(dplyr)
+library(tidyr)
+data(police_locals)
 ideology <- read_csv("http://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/datasets/ideology.csv")
 police_join <- inner_join(x = police_locals, y = ideology, by = "city")
 cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
