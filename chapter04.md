@@ -161,9 +161,9 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
-## Explanatory and Response Variables
-
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:96ucqpbqdc
+
+## Explanatory and Response Variables
 
 In the previous exercise, `race` is the response variable and `reside_perc` is the explanatory variable.
 
@@ -235,7 +235,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:2w0tdrbmiu
+--- type:NormalExercise lang:r xp:100 skills:1 key:419140ad13
 
 ## Faceting again
 
