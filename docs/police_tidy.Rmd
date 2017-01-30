@@ -23,7 +23,8 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 police_tidy <- police_join_cost %>% 
   gather(key = "race", value = "reside_perc", all:asian) %>% 
-  filter(race %in% c("white", "non_white"))
+  filter(race %in% c("white", "non_white")) %>% 
+  mutate(col_group = factor(col_group, levels = c("high", "mid", "low")))
 ```
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}

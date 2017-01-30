@@ -66,6 +66,7 @@ Recall the `police_join_cost` data frame that was created in the **Tidy Data** c
 - Remember to use `?geom_histogram` to look over the different options for creating a histogram.  For example, use the `bins` argument to specify the number of bins.
 - When you want to color or fill based on a specified color, make sure
 to add quotatation marks around the name of the color.
+- Make sure you haven't switched the colors for `fill` and `color`.
 
 *** =pre_exercise_code
 ```{r}
@@ -136,7 +137,8 @@ cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/producti
 police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
 police_tidy <- police_join_cost %>% 
   gather(key = "race", value = "reside_perc", all:asian) %>% 
-  filter(race %in% c("white", "non_white"))
+  filter(race %in% c("white", "non_white")) %>% 
+  mutate(col_group = factor(col_group, levels = c("high", "mid", "low")))
 ```
 
 *** =sample_code
@@ -161,4 +163,128 @@ test_error()
 
 ## Explanatory and Response Variables
 
---- type:NormalExercise lang:r xp:100 skills:1 key:96ucqpbqdc
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:96ucqpbqdc
+
+In the previous exercise, `race` is the response variable and `reside_perc` is the explanatory variable.
+
+*** =instructions
+- True
+- False
+
+*** =hint
+- The explanatory variable is also known as the independent variable.  It is used to predict the response variable.
+- The response variable is also known as the dependent variable as it potentially depends on the values of the explanatory variable.
+
+*** =sct
+```{r}
+msg_bad <- "That is not correct!"
+msg_success <- "Race is the explanatory variable and residency percentage is the response variable."
+test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success))
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:2w0tdrbmiu
+
+## Faceting
+
+Another way to view the distribution of a response variables across the levels of an explanatory variable is by using a faceted histogram.
+
+*** =instructions
+- Produce a histogram with binwidth of 0.2 and white border color of `reside_perc` faceted by the levels of `state_ideology`.
+- THINK ABOUT IT:  What does this boxplot tell us about the statement: "Liberal cities tend to have fewer police officers living in the cities they patrol."?
+
+*** =hint
+- Remember to load the `ggplot2` package via `library(ggplot2)`
+- Remember to use `?geom_histogram` to look over the different options for creating a histogram.
+- You can facet by the levels of a categorical variable using the `facet_wrap` function.
+
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+library(readr)
+library(dplyr)
+library(tidyr)
+data(police_locals)
+ideology <- read_csv("http://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/datasets/ideology.csv")
+police_join <- inner_join(x = police_locals, y = ideology, by = "city")
+cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
+police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
+police_tidy <- police_join_cost %>% 
+  gather(key = "race", value = "reside_perc", all:asian) %>% 
+  filter(race %in% c("white", "non_white")) %>% 
+  mutate(col_group = factor(col_group, levels = c("high", "mid", "low")))
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+library(ggplot2)
+ggplot(data = police_tidy, mapping = aes(x = reside_perc)) +
+geom_histogram(color = "white", binwidth = 0.2) + facet_wrap(~state_ideology)
+```
+
+*** =sct
+```{r}
+test_library_function("ggplot2")
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
+
+test_error()
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:2w0tdrbmiu
+
+## Faceting again
+
+Recall from the **Scatter-plots & Line-graphs** chapter that cities in liberal states tend to have cost of living index values that are higher than cities in conservative states.
+
+*** =instructions
+- Produce a histogram with binwidth of 0.2 and white border color of `reside_perc` faceted by the levels of `col_group` for the [`police_resid`]((https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_tidy.html) data.
+- This time use the `facet_grid` function to display the histograms on top of each other instead of side-by-side.
+- THINK ABOUT IT:  Describe how the shape of the residency percentage of police officers changes depending on cost of living grouping?  Which ranges have the highest counts for each group?
+
+
+*** =hint
+- Remember to load the `ggplot2` package via `library(ggplot2)`
+- Remember to use `?geom_histogram` to look over the different options for creating a histogram.
+
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+library(readr)
+library(dplyr)
+library(tidyr)
+data(police_locals)
+ideology <- read_csv("http://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/datasets/ideology.csv")
+police_join <- inner_join(x = police_locals, y = ideology, by = "city")
+cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
+police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
+police_tidy <- police_join_cost %>% 
+  gather(key = "race", value = "reside_perc", all:asian) %>% 
+  filter(race %in% c("white", "non_white")) %>% 
+  mutate(col_group = factor(col_group, levels = c("high", "mid", "low")))
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+library(ggplot2)
+ggplot(data = police_tidy, mapping = aes(x = reside_perc)) +
+geom_histogram(color = "white", binwidth = 0.2) + facet_grid(col_group ~ .)
+```
+
+*** =sct
+```{r}
+test_library_function("ggplot2")
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
+
+test_error()
+```
