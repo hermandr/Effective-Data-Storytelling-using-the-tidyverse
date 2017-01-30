@@ -1,3 +1,3 @@
 ---
-title       : Mutating and arranging data
+title       : Grouping and summarizing data
 description : Insert the chapter description here

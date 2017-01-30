@@ -1,3 +1,3 @@
 ---
-title       : Grouping and summarizing data
+title       : Filtering rows
 description : Insert the chapter description here

@@ -1,3 +1,3 @@
 ---
-title       : The Five Named Graphs using ggplot2
+title       : Course wrap-up
 description : Insert the chapter description here

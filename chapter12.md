@@ -1,3 +1,3 @@
 ---
-title       : Correlation and regression
+title       : Confidence intervals
 description : Insert the chapter description here
