@@ -244,8 +244,8 @@ Recall from the **Scatter-plots & Line-graphs** chapter that cities in liberal s
 *** =instructions
 - Produce a histogram with binwidth of 0.2 and white border color of `reside_perc` faceted by the levels of `col_group` for the [`police_resid`]((https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_tidy.html) data.
 - This time use the `facet_grid` function to display the histograms on top of each other instead of side-by-side.
-- THINK ABOUT IT:  Describe how the shape of the residency percentage of police officers changes depending on cost of living grouping?  Which ranges have the highest counts for each group?
-
+- THINK ABOUT IT:  Describe how the shape of the residency percentage of police officers changes depending on cost of living grouping.  Which ranges have the highest counts for each group?
+- THINK ABOUT IT:  What does this new boxplot tell us about the statement: "Liberal cities tend to have fewer police officers living in the cities they patrol."?
 
 *** =hint
 - Remember to load the `ggplot2` package via `library(ggplot2)`
