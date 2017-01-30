@@ -235,7 +235,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:2w0tdrbmiu
+--- type:NormalExercise lang:r xp:100 skills:1 key:419140ad13
 
 ## Faceting again
 
