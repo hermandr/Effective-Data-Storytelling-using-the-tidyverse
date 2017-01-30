@@ -43,7 +43,7 @@ ggplot(data = police_join_cost, mapping = aes(x = white)) +
 *** =sct
 ```{r}
 test_library_function("ggplot2")
-test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
 
 test_error()
 ```
