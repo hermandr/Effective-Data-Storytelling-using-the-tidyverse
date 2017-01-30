@@ -1,6 +1,6 @@
 ---
 title       : Tidy Data
-description : Look into tidy data properties on data sets from fivethirtyeight.com in the fivethirtyeight package
+description : Look into tidy data properties on data sets used in articles from fivethirtyeight.com in the fivethirtyeight R package
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:fa48676309

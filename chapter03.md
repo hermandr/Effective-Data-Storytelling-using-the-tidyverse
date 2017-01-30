@@ -1,10 +1,10 @@
 ---
 title       : Scatter-plots & Line-graphs
-description : In this chapter we will create and analyze different plots via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
+description : Create and analyze different plots relating two numerical variables via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:bl30sh3qn6
-## Relationship between quantitative variables
+## Relationship between numerical variables
 
 Suppose we are interested in analyzing the relationship between `all` and `index` in the
 `police_join_cost` data frame.
@@ -71,7 +71,7 @@ test_error()
 
 Let's further look into the relationship between `all` and `index` in
 `police_join_cost`.  We also added the `state_ideology` variable with values of `"Conservative"` and `"Liberal"` using `inner_join` in a previous exercise.  Let's color
-the points in the plot based on whether or not the city selected
+the points in the plot based on whether or not the city selected falls in a state labeled as `"Conservative"` or `"Liberal"`.
 
 *** =instructions
 - Plot `index` on the horizontal axis and `all` on the vertical axis in an appropriate plot.
@@ -83,7 +83,7 @@ the points in the plot based on whether or not the city selected
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
 - Remember that we also need to map aesthetics to the data using `aes`.  This is true for `x` and `y` and also for `color`.
-- By default, `na.rm` is set to `FALSE` by default with `geom_point`.  You can specify it if you wish as `geom_point(na.rm = FALSE)` but you don't have to.
+- By default, `na.rm` is set to `FALSE` by default with `geom_point`.  You can specify it if you wish as an argument to `geom_point()` as `na.rm = FALSE` but you don't have to.
 
 *** =pre_exercise_code
 ```{r}
@@ -136,7 +136,7 @@ on the 2014 births we also introduce a new function called `filter` in the `dply
 
 *** =instructions
 - Plot `births` on the vertical axis and `date` on the horizontal axis using a line for the geometry.
-- THINK ABOUT IT:  This isn't a very pretty plot to look at. Why is there so much "up-and-down" in the plot?  What makes this plot hard to look at?
+- THINK ABOUT IT:  This isn't a very pretty (or useful) plot to look at. Why is there so much "up-and-down" in the plot?  Additionally, what makes this plot hard to understand?
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
