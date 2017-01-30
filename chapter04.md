@@ -15,6 +15,8 @@ Recall the `police_join_cost` data frame that was created in the **Tidy Data** c
 *** =hint
 - Remember to load the `ggplot2` package via `library(ggplot2)`
 - Remember to use `?geom_histogram` to look over the different options for creating a histogram.  For example, use the `bins` argument to specify the number of bins.
+- When you want to color or fill based on a specified color, make sure
+to add quotatation marks around the name of the color.
 
 *** =pre_exercise_code
 ```{r}
@@ -43,7 +45,8 @@ ggplot(data = police_join_cost, mapping = aes(x = white)) +
 *** =sct
 ```{r}
 test_library_function("ggplot2")
-test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE,
+  geom_fail_msg = "Make sure you are using `geom_histogram` here and that you have correctly specified the arguments.  Check the hint if you need help.")
 
 test_error()
 ```
