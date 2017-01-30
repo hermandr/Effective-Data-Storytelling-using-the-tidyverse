@@ -10,7 +10,7 @@ Recall the `police_join_cost` data frame that was created in the **Tidy Data** c
 
 *** =instructions
 - Create a histogram for viewing the distribution of residency of white police officers.
-- The histogram should have 5 bins, fill color of "red", and border color of "white".
+- The histogram should have 5 bins, fill color of "navyblue", and border color of "white".
 
 *** =hint
 - Remember to load the `ggplot2` package via `library(ggplot2)`
@@ -39,14 +39,14 @@ police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state"
 ```{r}
 library(ggplot2)
 ggplot(data = police_join_cost, mapping = aes(x = white)) +
-  geom_histogram(bins = 5, fill = "red", color = "white")
+  geom_histogram(bins = 5, fill = "navyblue", color = "white")
 ```
 
 *** =sct
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE,
-  geom_fail_msg = "Make sure you are using `geom_histogram` here and that you have correctly specified the arguments.  Check the hint if you need help.")
+  geom_fail_msg = "Make sure you are using `geom_histogram` here and that you have correctly specified its arguments.  Take Hint if you need help.")
 
 test_error()
 ```
@@ -54,6 +54,54 @@ test_error()
 --- type:NormalExercise lang:r xp:100 skills:1 key:80cf9c93cf
 
 ## Making an appropriate plot
+
+Recall the `police_join_cost` data frame that was created in the **Tidy Data** chapter and is available for interactive viewing [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_join_cost.html).  The plot from the previous question looking at the distribution of the residency of white police officers is also loaded.
+
+*** =instructions
+- Create a histogram for viewing the distribution of residency of non-white police officers.
+- The histogram should have 5 bins with the bins having yellow color and a black border.
+
+*** =hint
+- Remember to load the `ggplot2` package via `library(ggplot2)`
+- Remember to use `?geom_histogram` to look over the different options for creating a histogram.  For example, use the `bins` argument to specify the number of bins.
+- When you want to color or fill based on a specified color, make sure
+to add quotatation marks around the name of the color.
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+data(police_locals)
+library(readr)
+library(dplyr)
+ideology <- read_csv("http://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/datasets/ideology.csv")
+police_join <- inner_join(x = police_locals, y = ideology, by = "city")
+cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
+police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
+library(ggplot2)
+ggplot(data = police_join_cost, mapping = aes(x = white)) +
+  geom_histogram(bins = 5, fill = "navyblue", color = "white")
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+library(ggplot2)
+ggplot(data = police_join_cost, mapping = aes(x = non_white)) +
+  geom_histogram(bins = 5, fill = "yellow", color = "black")
+```
+
+*** =sct
+```{r}
+test_library_function("ggplot2")
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE,
+  geom_fail_msg = "Make sure you are using `geom_histogram` here and that you have correctly specified its arguments.  Take Hint if you need help.")
+
+test_error()
+```
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:ouyqgxeewi
 
