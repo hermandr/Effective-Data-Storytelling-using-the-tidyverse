@@ -1,3 +1,3 @@
 ---
-title       : Simulating randomness
+title       : Hypothesis Testing
 description : Insert the chapter description here

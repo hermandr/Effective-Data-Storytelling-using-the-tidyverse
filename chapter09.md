@@ -1,3 +1,3 @@
 ---
-title       : Mutating and arranging data
+title       : Simulating Randomness
 description : Insert the chapter description here
