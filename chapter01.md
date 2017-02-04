@@ -126,7 +126,7 @@ by determining the vector specified below.
 in the `df` data frame.
 - The total police force is stored in the vector `all` in `police_locals`.
 - Recall to extract a vector from a data frame, we use `$`.
-- Use the assignment operater `<-` to give a name to an object (such as a vector).
+- Use the assignment operator `<-` to give a name to an object (such as a vector).
 
 
 *** =pre_exercise_code

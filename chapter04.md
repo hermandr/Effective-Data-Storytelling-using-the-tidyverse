@@ -16,7 +16,7 @@ Recall the `police_join_cost` data frame that was created in the **Tidy Data** c
 - Remember to load the `ggplot2` package via `library(ggplot2)`
 - Remember to use `?geom_histogram` to look over the different options for creating a histogram.  For example, use the `bins` argument to specify the number of bins.
 - When you want to color or fill based on a specified color, make sure
-to add quotatation marks around the name of the color.
+to add quotation marks around the name of the color.
 
 *** =pre_exercise_code
 ```{r}
@@ -65,7 +65,7 @@ Recall the `police_join_cost` data frame that was created in the **Tidy Data** c
 - Remember to load the `ggplot2` package via `library(ggplot2)`
 - Remember to use `?geom_histogram` to look over the different options for creating a histogram.  For example, use the `bins` argument to specify the number of bins.
 - When you want to color or fill based on a specified color, make sure
-to add quotatation marks around the name of the color.
+to add quotation marks around the name of the color.
 - Make sure you haven't switched the colors for `fill` and `color`.
 
 *** =pre_exercise_code
