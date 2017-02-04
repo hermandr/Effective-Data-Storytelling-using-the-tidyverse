@@ -10,9 +10,11 @@ Read over the 2014 article from FiveThirtyEight.com entitled "Most Police Don’
 
 The dataset corresponding to this article from the `fivethirtyeight` package has been loaded as a data frame with name `police_locals` and is available in the workspace.  You can view the `police_locals` data frame as an interactive table [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_locals.html).
 
+Recall that to work with functions and/or data stored in an R package, we need to first load the package using the `library` function.  This is done for you with both the `tibble` package and the `fivethirtyeight` package.
+
 *** =instructions
 - Get the names of the columns/variables in `police_locals` using the `names` function.
-- Check out the properties of `police_locals` using the `glimpse` function in the `tibble` package.
+- Check out the properties of `police_locals` using the `glimpse` function in the `tibble` package.  (This function acts much like the `str` function, but has some nicer features.)
 - THINK ABOUT IT:  After running the code, why are the variables in `police_locals` the specific `class` they are coded as here (`char`, `int`, `double`)?
 
 *** =hint
@@ -197,7 +199,7 @@ Extract the police size forces corresponding to indices 14 to 39 in `police_loca
 *** =hint
 - Remember police size forces are giving in the `police_size_force` vector.
 - The `:` operator can be used to specify a range of values.  You can look for help on this by entering `?` `` `:` `` in the R Console.
-- You don't have to use `c` with `:` but you can.  For example, `my_vec2 <- my_vec[c(1:2)]` sends the first two indexed values of `my_vec` to an object with the name `my_vec2`.  `my_vec2 <- my_vec[1:2]` also works.
+- You don't have to use `c` with `:`.  For example, `my_vec2 <- my_vec[c(1:2)]` sends the first two indexed values of `my_vec` to an object with the name `my_vec2`, but `my_vec2 <- my_vec[1:2]` also works and is preferred.
 
 *** =pre_exercise_code
 ```{r}
@@ -210,7 +212,7 @@ data(police_locals)
 
 *** =solution
 ```{r}
-pol_force <- police_locals$police_size_force[14:39]
+pol_force <- police_locals$force_size[14:39]
 ```
 
 
