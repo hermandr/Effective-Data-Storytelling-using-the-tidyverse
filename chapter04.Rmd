@@ -186,7 +186,7 @@ test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success))
 
 ## Faceting
 
-Another way to view the distribution of a response variables across the levels of an explanatory variable is by using a faceted histogram.
+Another way to view the distribution of a response variable across the levels of an explanatory variable is by using a faceted histogram.
 
 *** =instructions
 - Produce a histogram with binwidth of 0.2 and white border color of `reside_perc` faceted by the levels of `state_ideology`.
