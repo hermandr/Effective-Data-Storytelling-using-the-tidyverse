@@ -231,7 +231,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:e98815e0b9
 ## Bechdel pass/fail over time (side-by-side)
 
 We can also shift the bars next to each other instead of being `stack`ed while still being based on the number that `FAIL` or `PASS`.  The plot from the previous exercise has been added here.
@@ -288,7 +288,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:29ba2e2bf8
 ## Bechdel pass/fail over time (faceted)
 
 We can also create separate plots for `FAIL` and `PASS` using the concept of "small multiples." The plot from the previous exercise has been added here for reference.
@@ -347,7 +347,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:8ec4256aba
 ## Bechdel pass/fail over time (proportional height)
 
 Each of the last three plots have the common problem that raw counts are shown instead of the proportion of `FAIL` versus `PASS` for each `five_year` increment.  While there are circumstances where raw counts make sense, this Bechdel test example leads us to want to explore the percentages of `FAIL` versus `PASS` instead.
@@ -401,7 +401,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:81c080dffd
 ## Showing off
 
 We can actually produce a plot pretty close to the ["The Bechdel Test Over Time"](https://espnfivethirtyeight.files.wordpress.com/2014/04/hickey-bechdel-11.png?quality=90&strip=all&w=1150&ssl=1) plot by using `position = "fill"` and specifying the colors we'd like to use instead of the defaults.  
