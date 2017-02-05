@@ -2,7 +2,7 @@
 title       : Barplots
 description : Generate and examine barplots displaying one categorical variable or relationships between multiple categorical variables via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
   
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:958d730f0a
 ## Distribution of one categorical variable
 
 When working with a qualitative variable (one in which the data falls into many different categories), the first plot you will likely make is a barplot.  This will show how many of each category there are for that particular categorical variable.
@@ -60,7 +60,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:4171b4d317
 ## Distribution of another categorical variable
 
 The plot in the previous exercise is a little deceiving since it appears that `ok` stands above the other categories.  There is a different variable in `bechdel` that better shows whether a movie passed or failed the `bechdel` test.
@@ -118,7 +118,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:a7640e7d88
 ## Movies over time
 
 The **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/) breaks down the distribution of `clean_test` across five year intervals from 1970 to 2014 (1970-'74, 1975-'79, etc.).  Technically, the last interval only contains four years: 2010-'13.
@@ -167,5 +167,5 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:a52a0a9153
 ## Bechdel pass/fail over time
