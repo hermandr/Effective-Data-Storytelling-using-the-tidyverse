@@ -408,7 +408,7 @@ We can actually produce a plot pretty close to the ["The Bechdel Test Over Time"
 
 The default colors are shown in the plot already loaded for you.  As you write the code to create the plot, carefully pull apart how the different elements of the plot match with the Grammar of Graphics theory.
 
-We could continue to tweak the plot to make it look more and more like the actual published plot using nothing but `ggplot` code.  This is one of the great powers of R:  it's customizability and portable make creating professional-style graphics interactive and fun.
+We could continue to tweak the plot to make it look more and more like the actual published plot using nothing but `ggplot` code.  This is one of the great powers of R:  its customizability and portability make creating professional-style graphics interactive and fun and REPRODUCIBLE!
 
 *** =instructions
 - After writing the code to produce the plot shown, add in the code given to color the bars appropriately.  (Remember to use the Console as your sandbox for testing.)
