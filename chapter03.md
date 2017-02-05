@@ -1,7 +1,8 @@
 ---
 title       : Scatter-plots & Line-graphs
 description : Create and analyze different plots relating two numerical variables via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
-
+attachments:
+  slides_link: https://ismayc.github.io/moderndiver-book/4-viz.html
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:bl30sh3qn6
 ## Relationship between numerical variables
@@ -130,9 +131,12 @@ test_error()
 --- type:NormalExercise lang:r xp:100 skills:1 key:mhza74qwhy
 ## Babies born over time (line-graph)
 
-We now shift our analysis to looking at babies born in the US in 2014 by day.  This data is stored
+Read over the 2016 article from FiveThirtyEight.com entitled "Some People Are Too Superstitious To Have A Baby On Friday The 13th" [here](https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/).  The article explores how many fewer babies are born on Friday the 13th's compared to Friday the 6th's or Friday the 20th's.  
+
+We'll look at more general relationships than this focusing on 
+babies born in the US in 2014 by day. This data is stored
 in the `US_births_2000_2014` data frame in the `fivethirtyeight` package.  In order to isolate only
-on the 2014 births we also introduce a new function called `filter` in the `dplyr` package and the `%>%` (pipe) operator that you'll explore more later in the course.  You can view the resulting `US_births_2014` data frame interactively [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/US_births_2014.html).
+on the 2014 births, we could use the `subset` function but we prefer to use the `filter` function in the `dplyr` package and the `%>%` (pipe) operator that you'll explore more later in the course.  You can view the resulting `US_births_2014` data frame interactively [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/US_births_2014.html).
 
 *** =instructions
 - Plot `births` on the vertical axis and `date` on the horizontal axis using a line for the geometry.

@@ -1,6 +1,8 @@
 ---
 title       : Histograms & Boxplots
 description : Make and interpret different plots relating one categorical variable to one numerical variable via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
+attachments:
+  slides_link: https://ismayc.github.io/moderndiver-book/4-viz.html
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:yl6eto7bme
 
