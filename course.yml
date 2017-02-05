@@ -5,5 +5,5 @@ instructors      :
 description      : This course is designed to supplement and build on the content covered at http://moderndive.com .  It assumes that you have completed the Introduction to R course on DataCamp at https://www.datacamp.com/courses/free-introduction-to-r .
 university       : Pacific University
 difficulty_level : 2
-time_needed      : 10 hours
+time_needed      : 15 hours
 from             : 'r-base-prod:13'
