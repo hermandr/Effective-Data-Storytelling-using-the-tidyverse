@@ -185,6 +185,7 @@ We can now look at the relationship of movies passing or failing the Bechdel tes
 ```{r}
 library(fivethirtyeight)
 library(dplyr)
+library(ggplot2)
 data(bechdel)
 year_bins <- c("1970-'74", "1975-'79", "1980-'84", "1985-'89",
                "1990-'94", "1995-'99", "2000-'04", "2005-'09",
