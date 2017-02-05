@@ -4,7 +4,7 @@ description : Generate and examine barplots displaying one categorical variable 
 attachments:
   slides_link: https://ismayc.github.io/moderndiver-book/4-viz.html
   
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:958d730f0a
 ## Distribution of one categorical variable
 
 When working with a qualitative variable (one in which the data falls into many different categories), the first plot you likely will make is a barplot.  This will show how many of each category there are for that particular categorical variable.
