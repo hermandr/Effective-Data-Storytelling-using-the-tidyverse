@@ -242,7 +242,7 @@ test_error()
 Recall from the **Scatter-plots & Line-graphs** chapter that cities in liberal states tend to have cost of living index values that are higher than cities in conservative states.
 
 *** =instructions
-- Produce a histogram with binwidth of 0.2 and white border color of `reside_perc` faceted by the levels of `col_group` for the [`police_tidy`]((https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_tidy.html) data.
+- Produce a histogram with binwidth of 0.2 and white border color of `reside_perc` faceted by the levels of `col_group` for the [`police_tidy`](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_tidy.html) data.
 - This time use the `facet_grid` function to display the histograms on top of each other instead of side-by-side.
 - THINK ABOUT IT:  Describe how the shape of the residency percentage of police officers changes depending on cost of living grouping.  Which ranges have the highest counts for each group?
 - THINK ABOUT IT:  What does this new boxplot tell us about the statement: "Liberal cities tend to have fewer police officers living in the cities they patrol."?
