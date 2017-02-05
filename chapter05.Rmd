@@ -136,6 +136,9 @@ A new variable called `five_year` has been added to the `bechdel` data frame tha
 library(fivethirtyeight)
 library(dplyr)
 data(bechdel)
+year_bins <- c("1970-'74", "1975-'79", "1980-'84", "1985-'89",
+               "1990-'94", "1995-'99", "2000-'04", "2005-'09",
+               "2010-'13")
 bechdel <- bechdel %>%
   mutate(five_year = cut(year, 
                          breaks = seq(1969, 2014, 5), 
@@ -151,7 +154,6 @@ library(ggplot2)
 
 *** =solution
 ```{r}
-# Identify the variable that gives pass/fail of the Bechdel test
 library(fivethirtyeight)
 library(ggplot2)
 ggplot(data = bechdel,
@@ -169,3 +171,53 @@ test_error()
 
 --- type:NormalExercise lang:r xp:100 skills:1
 ## Bechdel pass/fail over time
+
+We can now look at the relationship of movies passing or failing the Bechdel test based on the `five_year` time periods.  In other words, we will be "painting" the bars you created in the previous exercise proportionally based on the number that `FAIL` or `PASS`.  The plot from the previous exercise has been added here.
+
+*** =instructions
+- Produce a barplot showing the counts of the number of movies in each of the different `five_year` increments `fill`ed according to the levels of `binary`.
+
+*** =hint
+- Barplots are created using `geom_bar` when we want to determine the total number in each category from a data set.
+- To change the colors of the bars based on another variable (say `var2`), include `fill = var2` inside of `aes`.  Note that `var2` is just a general variable and not one actually in `bechdel`.
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+library(dplyr)
+data(bechdel)
+year_bins <- c("1970-'74", "1975-'79", "1980-'84", "1985-'89",
+               "1990-'94", "1995-'99", "2000-'04", "2005-'09",
+               "2010-'13")
+bechdel <- bechdel %>%
+  mutate(five_year = cut(year, 
+                         breaks = seq(1969, 2014, 5), 
+                         labels = year_bins))
+ggplot(data = bechdel,
+       mapping = aes(x = five_year)) +
+  geom_bar()
+```
+
+*** =sample_code
+```{r}
+library(fivethirtyeight)
+library(ggplot2)
+
+```
+
+*** =solution
+```{r}
+library(fivethirtyeight)
+library(ggplot2)
+ggplot(data = bechdel,
+       mapping = aes(x = five_year, fill = binary)) +
+  geom_bar()
+```
+
+*** =sct
+```{r}
+test_library_function("ggplot2")
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
+
+test_error()
+```
