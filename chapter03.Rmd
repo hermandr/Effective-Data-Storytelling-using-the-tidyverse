@@ -1,8 +1,6 @@
 ---
 title       : Scatter-plots & Line-graphs
 description : Create and analyze different plots relating two numerical variables via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
-attachments:
-  slides_link: https://ismayc.github.io/moderndiver-book/4-viz.html
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:bl30sh3qn6
 ## Relationship between numerical variables

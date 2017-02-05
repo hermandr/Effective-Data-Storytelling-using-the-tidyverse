@@ -1,8 +1,6 @@
 ---
 title       : Tidy Data
 description : Look into tidy data properties on data sets used in articles from fivethirtyeight.com in the fivethirtyeight R package
-attachments:
-  slides_link: https://ismayc.github.io/moderndiver-book/3-tidy.html
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:fa48676309
 ## Joining data frames
