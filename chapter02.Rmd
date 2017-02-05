@@ -217,7 +217,7 @@ test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:262a102cfb
 ## What's the observational unit?
 
-What is the observational unit in the `bechdel` [data frame]((https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/bechdel.html)?
+What is the observational unit in the `bechdel` [data frame](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/bechdel.html)?
 
 *** =instructions
 - Budget of the movie
