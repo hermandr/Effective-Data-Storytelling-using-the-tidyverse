@@ -409,12 +409,13 @@ The default colors are shown in the plot already loaded for you.  As you write t
 We could continue to tweak the plot to make it look more and more like the actual published plot using nothing but `ggplot` code.  This is one of the great powers of R:  its customizability and portability make creating professional-style graphics interactive, fun, and REPRODUCIBLE!
 
 *** =instructions
-- After writing the code to produce the plot shown, add in the code given to color the bars appropriately.  (Remember to use the Console as your sandbox for testing.)
+- After writing the code to produce the plot shown, add in the code given to color the bars appropriately.  (Remember to use the **R Console** as your sandbox for testing.)
 
 *** =hint
 - Barplots are created using `geom_bar` when we want to determine the total number in each category from a data set.
 - To change the colors of the bars based on another variable (say `var2`), include `fill = var2` inside of `aes`.  Note that `var2` is just a general variable and not one actually in `bechdel`.
 - We are using the `clean_test` variable here instead of `binary`.
+- Note the addition of the borders around the bars with `color`.
 
 *** =pre_exercise_code
 ```{r}
@@ -432,7 +433,7 @@ bechdel <- bechdel %>%
   mutate(clean_test = factor(clean_test, 
                              levels = c("nowomen", "notalk", "men", "dubious", "ok")))
 ggplot(data = bechdel, mapping = aes(x = five_year, fill = clean_test)) +
-  geom_bar(position = "fill")
+  geom_bar(position = "fill", color = "white")
 ```
 
 *** =sample_code
@@ -443,6 +444,7 @@ library(ggplot2)
 
 # Add these lines at the end of your ggplot code
 # These will color the bars in the same colors as the FiveThirtyEight plot
+# (Note the placement of the + here to be added on to your code.)
                                     +
   scale_fill_manual(values = c("#FF2603", "#FF937F", "#FEC9C3", "#6AB4DA", "#018ED5"))
 ```
@@ -452,7 +454,7 @@ library(ggplot2)
 library(fivethirtyeight)
 library(ggplot2)
 ggplot(data = bechdel, mapping = aes(x = five_year, fill = clean_test)) +
-  geom_bar(position = "fill")                                     +
+  geom_bar(position = "fill", color = "white") +
   scale_fill_manual(values = c("#FF2603", "#FF937F", "#FEC9C3", "#6AB4DA", "#018ED5"))
 ```
 
@@ -461,6 +463,6 @@ ggplot(data = bechdel, mapping = aes(x = five_year, fill = clean_test)) +
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE,
             check_extra = TRUE, exact_extra = TRUE)
-
+success_msg("Nicely done!  <br><br> THINK ABOUT IT: How does this plot improve on the other plots created throughout this chapter?")
 test_error()
 ```
