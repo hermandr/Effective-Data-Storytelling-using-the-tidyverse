@@ -15,7 +15,6 @@ To assist with the plotting, the `clean_test` variable has been converted to a `
 
 *** =instructions
 - Produce an appropriate plot looking at the distribution of `clean_test` in the `bechdel` data frame.
-- THINK ABOUT IT:  What does this plot tell us in terms of movies passing the Bechdel test or not since 1970?
 
 *** =hint
 - Remember that we use the `aes` function to map aesthetics.  Also be sure there are two `))` before the `+`:  one for the `ggplot` call and one for the `aes` call.
@@ -56,7 +55,7 @@ ggplot(data = bechdel,
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-
+success_msg("Nicely done! <br><br> THINK ABOUT IT:  What does this plot tell us in terms of movies passing the Bechdel test or not since 1970?")
 test_error()
 ```
 
@@ -66,7 +65,7 @@ test_error()
 The plot in the previous exercise is a little deceiving since it appears that `ok` stands above the other categories.  There is a different variable in `bechdel` that better shows whether a movie passed or failed the Bechdel test.
 
 *** =instructions
-- Use the `glimpse` function on `bechdel` to identify this more appropriate variable. (Recall that you can test code in the Console first, then enter it into the script window.)
+- Use the `glimpse` function on `bechdel` to identify this more appropriate variable. (Recall that you can test code in the **R Console** first, then enter it into the script window.)
 - Produce a barplot of this variable and also `fill` based on the different values of the variable.
 
 *** =hint
@@ -93,7 +92,7 @@ library( )
 # Produce an appropriate plot by filling in the entries correctly
 library(ggplot2)
 ggplot(data = ,
-       mapping = aes(   , fill = ) +
+       mapping = aes(   , fill = )) +
   geom_   ()
 ```
 
@@ -185,7 +184,7 @@ We can now look at the relationship of movies passing or failing the Bechdel tes
 
 *** =hint
 - Barplots are created using `geom_bar` when we want to determine the total number in each category from a data set.
-- To change the colors of the bars based on another variable (say `var2`), include `fill = var2` inside of `aes`.  Note that `var2` is just a general variable and not one actually in `bechdel`.
+- To change the colors of the bars based on another variable in the same data frame (say `var2`), include `fill = var2` inside of `aes`.  Note that `var2` is just a general variable and not one actually in `bechdel`.
 
 *** =pre_exercise_code
 ```{r}
@@ -354,7 +353,6 @@ Each of the last three plots have the common problem that raw counts are shown i
 
 *** =instructions
 - Use `position = "fill"` to create a barplot in the spirit of **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
-- THINK ABOUT IT:  What is clearer in observing this plot than the plots created in the previous three exercises?
 
 *** =hint
 - Barplots are created using `geom_bar` when we want to determine the total number in each category from a data set.
@@ -397,7 +395,7 @@ ggplot(data = bechdel,
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-
+success_msg("Great work! <br><br>  THINK ABOUT IT:  What is clearer in observing this plot than the plots created in the previous three exercises?")
 test_error()
 ```
 
@@ -408,7 +406,7 @@ We can actually produce a plot pretty close to the ["The Bechdel Test Over Time"
 
 The default colors are shown in the plot already loaded for you.  As you write the code to create the plot, carefully pull apart how the different elements of the plot match with the Grammar of Graphics theory.
 
-We could continue to tweak the plot to make it look more and more like the actual published plot using nothing but `ggplot` code.  This is one of the great powers of R:  its customizability and portability make creating professional-style graphics interactive and fun and REPRODUCIBLE!
+We could continue to tweak the plot to make it look more and more like the actual published plot using nothing but `ggplot` code.  This is one of the great powers of R:  its customizability and portability make creating professional-style graphics interactive, fun, and REPRODUCIBLE!
 
 *** =instructions
 - After writing the code to produce the plot shown, add in the code given to color the bars appropriately.  (Remember to use the Console as your sandbox for testing.)

@@ -65,9 +65,9 @@ test_error()
 test_function("inner_join", args = "x")
 test_function("inner_join", args = "y")
 test_function("inner_join", args = "by")
-success_msg("Good work! \n (THINK ABOUT IT:  How does linking these two data sets together help in analyzing the
+success_msg("Good work! <br><br> THINK ABOUT IT:  How does linking these two data sets together help in analyzing the
 relationship between `state_ideology` and percentage of police officers residing in the
-cities they serve by race?)")
+cities they serve by race?")
 ```
 
 

@@ -11,7 +11,6 @@ Suppose we are interested in analyzing the relationship between `all` and `index
 *** =instructions
 - What types of variables are `all` and `index`?  Use the `glimpse` function in the `tibble` package to find out.
 - Plot `index` on the horizontal axis and `all` on the vertical axis in an appropriate plot.
-- THINK ABOUT IT:  After looking over the plot, is it the type of relationship you expected (negative, positive, not much at all, etc.)?
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
@@ -60,7 +59,7 @@ ggplot(data = police_join_cost,
 test_library_function("tibble")
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-msg_success("Good work!  (THINK ABOUT IT:  After looking over the plot, is it the type of relationship you expected (negative, positive, not much at all, etc.)?)")
+success_msg("Good work! <br><br> THINK ABOUT IT:  After looking over the plot, is it the type of relationship you expected (negative, positive, not much at all, etc.)?")
 test_error()
 ```
 
@@ -76,8 +75,6 @@ the points in the plot based on whether or not the city selected falls in a stat
 - Plot `index` on the horizontal axis and `all` on the vertical axis in an appropriate plot.
 - Add `color` to the points based on values of `state_ideology`.
 - Remember to add a call to `library` to include the specific package needed for graphics.
-- THINK ABOUT IT:  What stands out to you as you look over this plot?  How does adding the
-`state_ideology` help you better understand the relationships between the variables?
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
@@ -123,9 +120,8 @@ ggplot(data = police_join_cost,
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, 
   check_geom_params = TRUE)
-msg_success("Nice! (THINK ABOUT IT:  What stands out to you as you look
-  over this plot?  How does adding the `state_ideology` help you better understand
-  the relationships between the variables?)")
+msg_success("Nice! <br><br> THINK ABOUT IT:  What stands out to you as you look over this plot?  How does adding the
+`state_ideology` help you better understand the relationships between the variables?")
 test_error()
 ```
 
@@ -140,7 +136,6 @@ on the 2014 births, we could use the `subset` function but we prefer to use the 
 
 *** =instructions
 - Plot `births` on the vertical axis and `date` on the horizontal axis using a line for the geometry.
-- THINK ABOUT IT:  This isn't a very pretty (or useful) plot to look at. Why is there so much "up-and-down" in the plot?  Additionally, what makes this plot hard to understand?
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
@@ -176,7 +171,7 @@ ggplot(data = US_births_2014,
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-
+success_msg("Nice! <br><br> THINK ABOUT IT:  This isn't a very pretty (or useful) plot to look at. Why is there so much 'up-and-down' in the plot?  Additionally, what makes this plot hard to understand?")
 test_error()
 ```
 
@@ -189,7 +184,6 @@ Recall that the line-graph in the last exercise had some strange features to it.
 - Plot `births` on the vertical axis and `date` on the horizontal axis using a point for the geometry.
 - THINK ABOUT IT:  Now that you've produced this scatter-plot, why were the lines going up and down across the plot?
 - Plot `births` on the vertical axis and `date` on the horizontal axis as a scatter-plot.  Then color the points based on `day_of_week`.
-- THINK ABOUT IT:  How does this coloring help to understand the distribution of births across the year?  Can you identify the points that don't follow the patterns and what days they correspond to?
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
@@ -227,6 +221,6 @@ ggplot(data = US_births_2014,
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-
+success_msg("Great work!  <br><br> THINK ABOUT IT:  How does this coloring help to understand the distribution of births across the year?  Can you identify the points that don't follow the patterns and what days they correspond to?")
 test_error()
 ```
