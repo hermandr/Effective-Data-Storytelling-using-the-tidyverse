@@ -352,7 +352,7 @@ test_error()
 Each of the last three plots have the common problem that raw counts are shown instead of the proportion of `FAIL` versus `PASS` for each `five_year` increment.  While there are circumstances where raw counts make sense, this Bechdel test example leads us to want to explore the percentages of `FAIL` versus `PASS` instead.
 
 *** =instructions
-- Use `position = "fill"` to create a barplot in the spirit of **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
+- Use `position = "fill"` as an argument to `geom_bar` to create a barplot in the spirit of **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
 
 *** =hint
 - Barplots are created using `geom_bar` when we want to determine the total number in each category from a data set.
