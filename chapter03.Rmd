@@ -60,7 +60,7 @@ ggplot(data = police_join_cost,
 test_library_function("tibble")
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-
+msg_success("Good work!  (THINK ABOUT IT:  After looking over the plot, is it the type of relationship you expected (negative, positive, not much at all, etc.)?)")
 test_error()
 ```
 
@@ -121,8 +121,11 @@ ggplot(data = police_join_cost,
 *** =sct
 ```{r}
 test_library_function("ggplot2")
-test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
-
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, 
+  check_geom_params = TRUE)
+msg_success("Nice! (THINK ABOUT IT:  What stands out to you as you look
+  over this plot?  How does adding the `state_ideology` help you better understand
+  the relationships between the variables?)")
 test_error()
 ```
 
@@ -131,8 +134,7 @@ test_error()
 
 Read over the 2016 article from FiveThirtyEight.com entitled "Some People Are Too Superstitious To Have A Baby On Friday The 13th" [here](https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/).  The article explores how many fewer babies are born on Friday the 13th's compared to Friday the 6th's or Friday the 20th's.  
 
-We'll look at more general relationships than this focusing on 
-babies born in the US in 2014 by day. This data is stored
+We'll look at more general relationships than this focusing on babies born in the US in 2014 by day. This data is stored
 in the `US_births_2000_2014` data frame in the `fivethirtyeight` package.  In order to isolate only
 on the 2014 births, we could use the `subset` function but we prefer to use the `filter` function in the `dplyr` package and the `%>%` (pipe) operator that you'll explore more later in the course.  You can view the resulting `US_births_2014` data frame interactively [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/US_births_2014.html).
 

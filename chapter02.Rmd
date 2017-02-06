@@ -21,11 +21,10 @@ An interactive table of the `ideology` data frame is  [here](https://ismayc.gith
 
 *** =instructions
 - Use the `inner_join` function in the `dplyr` package to add the `state` and `state_ideology` 
-columns to the `police_locals` where the key variable is `city` in both data frames.  (Note the use of `library(dplyr)` here.  You will always need to load the package first if you would like to use the functions inside it.)
+columns to the `police_locals` where the key variable is `city` in both data frames.  (Note the
+use of `library(dplyr)` here.  You will always need to load the package first if you would like
+to use the functions inside it.)
 - Assign the name `police_join` to this expanded data frame.
-- THINK ABOUT IT:  How does linking these two data sets together to analyze the
-relationship between `state_ideology` and percentage of police officers residing in the
-cities they serve by race.
 
 
 *** =hint
@@ -66,6 +65,9 @@ test_error()
 test_function("inner_join", args = "x")
 test_function("inner_join", args = "y")
 test_function("inner_join", args = "by")
+msg_success("Good work! \n (THINK ABOUT IT:  How does linking these two data sets together help in analyzing the
+relationship between `state_ideology` and percentage of police officers residing in the
+cities they serve by race?)")
 ```
 
 

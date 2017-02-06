@@ -7,9 +7,9 @@ description : Generate and examine barplots displaying one categorical variable 
 
 When working with a qualitative variable (one in which the data falls into many different categories), the first plot you will likely make is a barplot.  This will show how many of each category there are for that particular categorical variable.
 
-Recall the `bechdel` data frame that was introduced earlier in the course from the `fivethirtyeight` R package.  Suppose we are interested in analyzing the distribution of the `clean_test` variable.  
+Recall the `bechdel` data frame that was introduced earlier in the course from the `fivethirtyeight` R package.  It has been loaded into the environment here.  Suppose we are interested in analyzing the distribution of the `clean_test` variable.  
 
-Observe **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).  You can use this to get a better idea as to what the categories of `clean_test` represent.
+Observe and reflect on the **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).  You can use this to get a better idea as to what the categories of `clean_test` represent.
 
 To assist with the plotting, the `clean_test` variable has been converted to a `factor` with `levels` set corresponding to the order given in the plot in the article.
 
@@ -37,7 +37,7 @@ bechdel$clean_test <- factor(bechdel$clean_test,
 
 # Produce an appropriate plot by filling in the entries correctly
 ggplot(data = ,
-       mapping = aes(   ) +
+       mapping = aes(   )) +
   geom_   ()
 ```
 
