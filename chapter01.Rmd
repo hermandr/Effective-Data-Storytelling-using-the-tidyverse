@@ -69,7 +69,7 @@ test_function("glimpse", args = "x",
 
 test_error()
 
-success_msg("Good work! <br> (THINK ABOUT IT:  Why are the variables in `police_locals` the specific `class` they are coded as here (`chr`, `int`, `dbl`?)")
+success_msg("Good work! <br><br> THINK ABOUT IT:  Why are the variables in `police_locals` the specific `class` they are coded as here (`chr`, `int`, `dbl`?")
 ```
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:792856c06f
