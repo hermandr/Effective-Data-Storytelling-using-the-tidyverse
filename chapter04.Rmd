@@ -2,7 +2,7 @@
 title       : Histograms & Boxplots
 description : Make and interpret different plots relating one categorical variable to one numerical variable via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
 
---- type:NormalExercise lang:r xp:100 skills:1 key:yl6eto7bme
+--- type:NormalExercise lang:r xp:100 skills:1
 
 ## Creating a histogram
 
@@ -51,7 +51,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE,
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:80cf9c93cf
+--- type:NormalExercise lang:r xp:100 skills:1
 
 ## Making an appropriate plot
 
@@ -104,7 +104,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE,
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:ouyqgxeewi
+--- type:NormalExercise lang:r xp:100 skills:1
 
 ## Problems with non-tidy data
 
@@ -161,7 +161,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:96ucqpbqdc
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1
 
 ## Explanatory and Response Variables
 
@@ -182,7 +182,7 @@ msg_success <- "Race is the explanatory variable and residency percentage is the
 test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success))
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:2w0tdrbmiu
+--- type:NormalExercise lang:r xp:100 skills:1
 
 ## Faceting
 
@@ -235,7 +235,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:419140ad13
+--- type:NormalExercise lang:r xp:100 skills:1
 
 ## Faceting again
 

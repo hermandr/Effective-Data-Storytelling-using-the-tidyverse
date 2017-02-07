@@ -2,7 +2,7 @@
 title       : Barplots
 description : Generate and examine barplots displaying one categorical variable or relationships between multiple categorical variables via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
   
---- type:NormalExercise lang:r xp:100 skills:1 key:958d730f0a
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Distribution of one categorical variable
 
 When working with a qualitative variable (one in which the data falls into many different categories), the first plot you will likely make is a barplot.  This will show how many of each category there are for that particular categorical variable.
@@ -60,7 +60,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:4171b4d317
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Distribution of another categorical variable
 
 The plot in the previous exercise is a little deceiving since it appears that `ok` stands above the other categories.  There is a different variable in `bechdel` that better shows whether a movie passed or failed the Bechdel test.
@@ -122,7 +122,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:a7640e7d88
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Movies over time
 
 The **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/) breaks down the distribution of `clean_test` across five year intervals from 1970 to 2014 (1970-'74, 1975-'79, etc.).  Technically, the last interval only contains four years: 2010-'13.
@@ -175,7 +175,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:a52a0a9153
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Bechdel pass/fail over time (stacked)
 
 We can now look at the relationship of movies passing or failing the Bechdel test based on the `five_year` time periods.  In other words, we will be "painting" the bars you created in the previous exercise proportionally based on the number that `FAIL` or `PASS`.  The plot from the previous exercise has been added here.
@@ -231,7 +231,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:e98815e0b9
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Bechdel pass/fail over time (side-by-side)
 
 We can also shift the bars next to each other instead of being `stack`ed while still being based on the number that `FAIL` or `PASS`.  The plot from the previous exercise has been added here.
@@ -288,7 +288,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:29ba2e2bf8
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Bechdel pass/fail over time (faceted)
 
 We can also create separate plots for `FAIL` and `PASS` using the concept of "small multiples." The plot from the previous exercise has been added here for reference.
@@ -347,7 +347,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:8ec4256aba
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Bechdel pass/fail over time (proportional height)
 
 Each of the last three plots have the common problem that raw counts are shown instead of the proportion of `FAIL` versus `PASS` for each `five_year` increment.  While there are circumstances where raw counts make sense, this Bechdel test example leads us to want to explore the percentages of `FAIL` versus `PASS` instead.
@@ -401,7 +401,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:81c080dffd
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Showing off
 
 We can actually produce a plot pretty close to the ["The Bechdel Test Over Time"](https://espnfivethirtyeight.files.wordpress.com/2014/04/hickey-bechdel-11.png?quality=90&strip=all&w=1150&ssl=1) plot by using `position = "fill"` and specifying the colors we'd like to use instead of the defaults.  

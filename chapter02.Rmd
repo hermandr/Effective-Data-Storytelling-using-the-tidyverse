@@ -2,7 +2,7 @@
 title       : Tidy Data
 description : Look into tidy data properties on data sets used in articles from fivethirtyeight.com in the fivethirtyeight R package
 
---- type:NormalExercise lang:r xp:100 skills:1 key:fa48676309
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Joining data frames
 
 Recall the `police_locals` data frame you worked with in **Applying R Basics** as an interactive table [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_locals.html).  
@@ -69,7 +69,7 @@ test_function("inner_join", args = "by")
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:15cc059cea
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1
 ## Change in observational unit?
 
 Does the `police_join` data frame have a different observational unit than the `police_locals` data frame?
@@ -101,7 +101,7 @@ msg_success <- "Each row still corresponds to a city.  The addition of the two c
 test_mc(correct = 3, feedback_msgs = c(msg_bad, msg_bad, msg_success, msg_bad))
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:4399375881
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1
 ## Is it tidy?
 
 Recall that a *tidy* data frame must have three properties:
@@ -140,7 +140,7 @@ msg_success <- "This is not tidy. The `race` variable is distributed across mult
 test_mc(correct = 3, feedback_msgs = c(msg_bad, msg_bad, msg_success, msg_bad))
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:ca52fa48aa
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Another join
 
 There may be many reasons for police officers to not live in the same cities as they serve.  One potential reason that has been suggested is that the cost of living in some areas is much higher than in other nearby areas.  The Missouri Economic Research and Information Center created a table of the **Composite Cost of Living (Scaled)** by US state for the third quarter of 2016 [here](https://www.missourieconomy.org/indicators/cost_of_living/index.stm).  This data has been loaded as a data frame with the name `cost_of_living` available to view [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/cost_of_living.html) .  As shown on the map at the link, the overall `index` is given in `cost_of_living` for each state and categories of `"high"`, `"mid"`, and `"low"` are created in the `col_group` variable following the ranges on the map.
@@ -185,7 +185,7 @@ test_function("inner_join", args = "y")
 test_function("inner_join", args = "by")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:285e794c07
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1
 ## Is this tidy?
 
 Read over another 2014 article from FiveThirtyEight.com entitled "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women" [here](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/). We'll be working with a data used in this story stored as a data frame with name `bechdel` in the `fivethirtyeight` package throughout this DataCamp course.
@@ -214,7 +214,7 @@ test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:262a102cfb
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1
 ## What's the observational unit?
 
 What is the observational unit in the `bechdel` [data frame](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/bechdel.html)?

@@ -3,7 +3,7 @@ title       : Applying R Basics
 description : Exploring the basics of R on a data set based on the fivethirtyeight.com "Most Police Don’t Live In The Cities They Serve" article.
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:c306f947db
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Investigate the properties of a data frame
 
 Read over the 2014 article from FiveThirtyEight.com entitled "Most Police Don’t Live In The Cities They Serve" [here](http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/).   Police and their relationships with citizens has been a controversial topic for many years and has come to the forefront of American culture since the events of Ferguson, Missouri mentioned in this article.
@@ -75,7 +75,7 @@ test_error()
 success_msg("Good work!")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:792856c06f
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1
 ## Identify observational unit
 
 What is the observational unit in this `police_locals` data frame?  You can view the `police_locals` data frame as an interactive table [here](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_locals.html).
@@ -109,7 +109,7 @@ msg_success <- "Exactly! The observational unit here is city.  Percentage of off
 test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:a713e275ff
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Create a vector
 
 One of the cool features of R is that works quickly and easily with vectors.  Test your knowledge from the Intro to R course
@@ -151,7 +151,7 @@ test_error()
 
 
 
---- type:NormalExercise lang:r xp:50 skills:1 key:d4dc193a51
+--- type:NormalExercise lang:r xp:50 skills:1
 ## Subset and index a vector
 
 Use `[ ]` to extract specific information about a vector in the `police_locals` data frame.
@@ -187,7 +187,7 @@ test_error()
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:bd0f6596e5
+--- type:NormalExercise lang:r xp:100 skills:1
 ## Subset and index a vector again.
 
 In R, an index refers to the specific entry in an object.  As an example, in a vector called `my_vec` defined as
