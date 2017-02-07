@@ -7,15 +7,14 @@ description : Generate and examine barplots displaying one categorical variable 
 
 When working with a qualitative variable (one in which the data falls into many different categories), the first plot you will likely make is a barplot.  This will show how many of each category there are for that particular categorical variable.
 
-Recall the `bechdel` data frame that was introduced earlier in the course from the `fivethirtyeight` R package.  Suppose we are interested in analyzing the distribution of the `clean_test` variable.  
+Recall the `bechdel` data frame that was introduced earlier in the course from the `fivethirtyeight` R package.  It has been loaded into the environment here.  Suppose we are interested in analyzing the distribution of the `clean_test` variable.  
 
-Observe **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).  You can use this to get a better idea as to what the categories of `clean_test` represent.
+Observe and reflect on the **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).  You can use this to get a better idea as to what the categories of `clean_test` represent.
 
 To assist with the plotting, the `clean_test` variable has been converted to a `factor` with `levels` set corresponding to the order given in the plot in the article.
 
 *** =instructions
 - Produce an appropriate plot looking at the distribution of `clean_test` in the `bechdel` data frame.
-- THINK ABOUT IT:  What does this plot tell us in terms of movies passing the Bechdel test or not since 1970?
 
 *** =hint
 - Remember that we use the `aes` function to map aesthetics.  Also be sure there are two `))` before the `+`:  one for the `ggplot` call and one for the `aes` call.
@@ -37,7 +36,7 @@ bechdel$clean_test <- factor(bechdel$clean_test,
 
 # Produce an appropriate plot by filling in the entries correctly
 ggplot(data = ,
-       mapping = aes(   ) +
+       mapping = aes(   )) +
   geom_   ()
 ```
 
@@ -56,7 +55,7 @@ ggplot(data = bechdel,
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-
+success_msg("Nicely done! <br><br> THINK ABOUT IT:  What does this plot tell us in terms of movies passing the Bechdel test or not since 1970?")
 test_error()
 ```
 
@@ -66,7 +65,7 @@ test_error()
 The plot in the previous exercise is a little deceiving since it appears that `ok` stands above the other categories.  There is a different variable in `bechdel` that better shows whether a movie passed or failed the Bechdel test.
 
 *** =instructions
-- Use the `glimpse` function on `bechdel` to identify this more appropriate variable. (Recall that you can test code in the Console first, then enter it into the script window.)
+- Use the `glimpse` function on `bechdel` to identify this more appropriate variable. (Recall that you can test code in the **R Console** first, then enter it into the script window.)
 - Produce a barplot of this variable and also `fill` based on the different values of the variable.
 
 *** =hint
@@ -93,7 +92,7 @@ library( )
 # Produce an appropriate plot by filling in the entries correctly
 library(ggplot2)
 ggplot(data = ,
-       mapping = aes(   , fill = ) +
+       mapping = aes(   , fill = )) +
   geom_   ()
 ```
 
@@ -185,7 +184,7 @@ We can now look at the relationship of movies passing or failing the Bechdel tes
 
 *** =hint
 - Barplots are created using `geom_bar` when we want to determine the total number in each category from a data set.
-- To change the colors of the bars based on another variable (say `var2`), include `fill = var2` inside of `aes`.  Note that `var2` is just a general variable and not one actually in `bechdel`.
+- To change the colors of the bars based on another variable in the same data frame (say `var2`), include `fill = var2` inside of `aes`.  Note that `var2` is just a general variable and not one actually in `bechdel`.
 
 *** =pre_exercise_code
 ```{r}
@@ -353,8 +352,7 @@ test_error()
 Each of the last three plots have the common problem that raw counts are shown instead of the proportion of `FAIL` versus `PASS` for each `five_year` increment.  While there are circumstances where raw counts make sense, this Bechdel test example leads us to want to explore the percentages of `FAIL` versus `PASS` instead.
 
 *** =instructions
-- Use `position = "fill"` to create a barplot in the spirit of **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
-- THINK ABOUT IT:  What is clearer in observing this plot than the plots created in the previous three exercises?
+- Use `position = "fill"` as an argument to `geom_bar` to create a barplot in the spirit of **The Bechdel Test Over Time** image in the article ["The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
 
 *** =hint
 - Barplots are created using `geom_bar` when we want to determine the total number in each category from a data set.
@@ -397,7 +395,7 @@ ggplot(data = bechdel,
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-
+success_msg("Great work! <br><br>  THINK ABOUT IT:  What is clearer in observing this plot than the plots created in the previous three exercises?")
 test_error()
 ```
 
@@ -408,15 +406,16 @@ We can actually produce a plot pretty close to the ["The Bechdel Test Over Time"
 
 The default colors are shown in the plot already loaded for you.  As you write the code to create the plot, carefully pull apart how the different elements of the plot match with the Grammar of Graphics theory.
 
-We could continue to tweak the plot to make it look more and more like the actual published plot using nothing but `ggplot` code.  This is one of the great powers of R:  its customizability and portability make creating professional-style graphics interactive and fun and REPRODUCIBLE!
+We could continue to tweak the plot to make it look more and more like the actual published plot using nothing but `ggplot` code.  This is one of the great powers of R:  its customizability and portability make creating professional-style graphics interactive, fun, and REPRODUCIBLE!
 
 *** =instructions
-- After writing the code to produce the plot shown, add in the code given to color the bars appropriately.  (Remember to use the Console as your sandbox for testing.)
+- After writing the code to produce the plot shown, add in the code given to color the bars appropriately.  (Remember to use the **R Console** as your sandbox for testing.)
 
 *** =hint
 - Barplots are created using `geom_bar` when we want to determine the total number in each category from a data set.
 - To change the colors of the bars based on another variable (say `var2`), include `fill = var2` inside of `aes`.  Note that `var2` is just a general variable and not one actually in `bechdel`.
 - We are using the `clean_test` variable here instead of `binary`.
+- Note the addition of the borders around the bars with `color`.
 
 *** =pre_exercise_code
 ```{r}
@@ -434,7 +433,7 @@ bechdel <- bechdel %>%
   mutate(clean_test = factor(clean_test, 
                              levels = c("nowomen", "notalk", "men", "dubious", "ok")))
 ggplot(data = bechdel, mapping = aes(x = five_year, fill = clean_test)) +
-  geom_bar(position = "fill")
+  geom_bar(position = "fill", color = "white")
 ```
 
 *** =sample_code
@@ -445,6 +444,7 @@ library(ggplot2)
 
 # Add these lines at the end of your ggplot code
 # These will color the bars in the same colors as the FiveThirtyEight plot
+# (Note the placement of the + here to be added on to your code.)
                                     +
   scale_fill_manual(values = c("#FF2603", "#FF937F", "#FEC9C3", "#6AB4DA", "#018ED5"))
 ```
@@ -454,7 +454,7 @@ library(ggplot2)
 library(fivethirtyeight)
 library(ggplot2)
 ggplot(data = bechdel, mapping = aes(x = five_year, fill = clean_test)) +
-  geom_bar(position = "fill")                                     +
+  geom_bar(position = "fill", color = "white") +
   scale_fill_manual(values = c("#FF2603", "#FF937F", "#FEC9C3", "#6AB4DA", "#018ED5"))
 ```
 
@@ -463,6 +463,6 @@ ggplot(data = bechdel, mapping = aes(x = five_year, fill = clean_test)) +
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE,
             check_extra = TRUE, exact_extra = TRUE)
-
+success_msg("Nicely done!  <br><br> THINK ABOUT IT: How does this plot improve on the other plots created throughout this chapter?")
 test_error()
 ```

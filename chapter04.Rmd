@@ -116,8 +116,6 @@ It would make more sense to have a variable called `race` with entries of `white
 
 *** =instructions
 - Produce a boxplot looking at the relationship between `race` and `reside_perc`.
-- THINK ABOUT IT:  What stands out to you as you look over this plot from a social perspective?  What new information does this plot give you that was missing in the plots in the previous two exercises?
-- THINK ABOUT IT:  Why does using the tidy data set make more sense here?  How does tidy data help with plotting?
 
 *** =hint
 - Remember to load the `ggplot2` package via `library(ggplot2)`
@@ -157,7 +155,8 @@ ggplot(data = police_tidy, mapping = aes(x = race, y = reside_perc)) +
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-
+success_msg("Good work! <br><br> THINK ABOUT IT:  What stands out to you as you look over this plot from a social perspective?  What new information does this plot give you that was missing in the plots in the previous two exercises? <br>
+THINK ABOUT IT:  Why does using the tidy data set make more sense here?  How does tidy data help with plotting?")
 test_error()
 ```
 
@@ -190,7 +189,6 @@ Another way to view the distribution of a response variable across the levels of
 
 *** =instructions
 - Produce a histogram with binwidth of 0.2 and white border color of `reside_perc` faceted by the levels of `state_ideology`.
-- THINK ABOUT IT:  What does this boxplot tell us about the statement: "Liberal cities tend to have fewer police officers living in the cities they patrol."?
 
 *** =hint
 - Remember to load the `ggplot2` package via `library(ggplot2)`
@@ -231,7 +229,7 @@ geom_histogram(color = "white", binwidth = 0.2) + facet_wrap(~state_ideology)
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-
+success_msg("Nice work!  <br><br>  THINK ABOUT IT:  What does this boxplot tell us about the statement: 'Liberal cities tend to have fewer police officers living in the cities they patrol.'?")
 test_error()
 ```
 
@@ -244,8 +242,6 @@ Recall from the **Scatter-plots & Line-graphs** chapter that cities in liberal s
 *** =instructions
 - Produce a histogram with binwidth of 0.2 and white border color of `reside_perc` faceted by the levels of `col_group` for the [`police_tidy`](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_tidy.html) data.
 - This time use the `facet_grid` function to display the histograms on top of each other instead of side-by-side.
-- THINK ABOUT IT:  Describe how the shape of the residency percentage of police officers changes depending on cost of living grouping.  Which ranges have the highest counts for each group?
-- THINK ABOUT IT:  What does this new boxplot tell us about the statement: "Liberal cities tend to have fewer police officers living in the cities they patrol."?
 
 *** =hint
 - Remember to load the `ggplot2` package via `library(ggplot2)`
@@ -285,6 +281,6 @@ geom_histogram(color = "white", binwidth = 0.2) + facet_grid(col_group ~ .)
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-
+success_msg("Nicely done! <br><br> THINK ABOUT IT:  Describe how the shape of the residency percentage of police officers changes depending on cost of living grouping.  Which ranges have the highest counts for each group? <br> THINK ABOUT IT:  What does this new boxplot tell us about the statement: 'Liberal cities tend to have fewer police officers living in the cities they patrol.'?")
 test_error()
 ```
