@@ -2,7 +2,7 @@
 title       : Histograms & Boxplots
 description : Make and interpret different plots relating one categorical variable to one numerical variable via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:yl6eto7bme
 
 ## Creating a histogram
 
@@ -51,7 +51,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE,
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:80cf9c93cf
 
 ## Making an appropriate plot
 
@@ -104,7 +104,7 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE,
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:ouyqgxeewi
 
 ## Problems with non-tidy data
 
@@ -160,7 +160,7 @@ THINK ABOUT IT:  Why does using the tidy data set make more sense here?  How doe
 test_error()
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:96ucqpbqdc
 
 ## Explanatory and Response Variables
 
@@ -181,7 +181,7 @@ msg_success <- "Race is the explanatory variable and residency percentage is the
 test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success))
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:2w0tdrbmiu
 
 ## Faceting
 
@@ -233,7 +233,7 @@ success_msg("Nice work!  <br><br>  THINK ABOUT IT:  What does this boxplot tell 
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:419140ad13
 
 ## Faceting again
 
