@@ -2,7 +2,7 @@
 title       : Scatter-plots & Line-graphs
 description : Create and analyze different plots relating two numerical variables via the ggplot2 package using datasets in and derived from the fivethirtyeight R package
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:bl30sh3qn6
 ## Relationship between numerical variables
 
 Suppose we are interested in analyzing the relationship between `all` and `index` in the
@@ -64,7 +64,7 @@ test_error()
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:ujio5pauwu
 ## Adding another variable
 
 Let's further look into the relationship between `all` and `index` in
@@ -125,7 +125,7 @@ success_msg("Nice! <br><br> THINK ABOUT IT:  What stands out to you as you look 
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:mhza74qwhy
 ## Babies born over time (line-graph)
 
 Read over the 2016 article from FiveThirtyEight.com entitled "Some People Are Too Superstitious To Have A Baby On Friday The 13th" [here](https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/).  The article explores how many fewer babies are born on Friday the 13th's compared to Friday the 6th's or Friday the 20th's.  
@@ -175,7 +175,7 @@ success_msg("Nice! <br><br> THINK ABOUT IT:  This isn't a very pretty (or useful
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:v9lwv5gk0y
 ## Babies born over time (scatter-plot)
 
 Recall that the line-graph in the last exercise had some strange features to it.  Let's explore what the points themselves look like and then color the points based on another variable in the second plot.  The `US_births_2014` data frame has been loaded for you already.
