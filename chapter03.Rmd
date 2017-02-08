@@ -120,7 +120,7 @@ ggplot(data = police_join_cost,
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, 
   check_geom_params = TRUE)
-msg_success("Nice! <br><br> THINK ABOUT IT:  What stands out to you as you look over this plot?  How does adding the
+success_msg("Nice! <br><br> THINK ABOUT IT:  What stands out to you as you look over this plot?  How does adding the
 `state_ideology` help you better understand the relationships between the variables?")
 test_error()
 ```

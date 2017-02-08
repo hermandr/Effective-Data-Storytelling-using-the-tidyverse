@@ -100,7 +100,7 @@ library(tibble)
 # SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
 
 msg_bad <- "That is not correct!"
-success_msg <- "Exactly! The observational unit here is city.  Percentage of officers, police force, and race are all variables/characteristics about the city."
+msg_success <- "Exactly! The observational unit here is city.  Percentage of officers, police force, and race are all variables/characteristics about the city."
 test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 ```
 
@@ -114,13 +114,13 @@ by determining the vector specified below.
 
 - Create a new vector called `all_not` that calculates the percentage of the total police force that **DO NOT** live in the city.  Note that `all_not` should not be included in the `police_locals` data frame but instead live as a vector by itself.
 - You can get information on what each of the different variables in `police_locals` represents by entering `?police_locals` in the **R Console** or by going [here](https://rdrr.io/cran/fivethirtyeight/man/police_locals.html).
+- NOTE: The best way to extract a vector from a data frame is to use `$`.
 
 
 *** =hint
 - Remember that you can add or subtract a value from all elements of a vector using something like `vec2 <- 2 + df$vec1` where `vec1` is a vector
 in the `df` data frame.
 - The total police force is stored in the vector `all` in `police_locals`.
-- Recall to extract a vector from a data frame, we use `$`.
 - Use the assignment operator `<-` to give a name to an object (such as a vector).
 
 

@@ -1,0 +1,16 @@
+---
+title       : Supplement to ModernDive textbook
+description : To supplement learning of the material covered at http://moderndive.com, this chapter provides a playground for you to work with the code and better understand what each of the gray chunks of R code throughout the book does.
+
+--- type:NormalExercise lang:r xp:0 skills:1 key:fa48676309
+
+
+*** =instructions
+
+- All of the needed packages from the textbook are available to you here.  Note that the `View` function will not work on DataCamp as it does in RStudio, but I will add interactive versions of many of the data frames below soon.
+
+- Please use this as a playground to answer the Learning Checks throughout the [ModernDive](http://moderndive.com) textbook.  There are no problems to complete here, but please do play around as needed!
+
+- Remember to use the `library` function to load any needed package given at the top of the chapters of the [ModernDive](http://moderndive.com) textbook.
+
+- Pressing the **Submit Answer** button will run all of the code in **script.R** in your **R Console**.  If you'd like to test things out, feel free to use the **R Console** directly.
