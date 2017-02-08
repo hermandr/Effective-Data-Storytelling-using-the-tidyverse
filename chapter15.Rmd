@@ -12,3 +12,5 @@ description : To supplement learning of the material covered at http://moderndiv
 - Please use this as a playground to answer the Learning Checks throughout the [ModernDive](http://moderndive.com) textbook.  There are no problems to complete here, but please do play around as needed!
 
 - Remember to use the `library` function to load any needed package given at the top of the chapters of the [ModernDive](http://moderndive.com) textbook.
+
+- Pressing the **Submit Answer** button will run all of the code in **script.R** in your **R Console**.  If you'd like to test things out, feel free to use the **R Console** directly.
