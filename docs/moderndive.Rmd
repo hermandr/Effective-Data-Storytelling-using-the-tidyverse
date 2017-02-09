@@ -7,8 +7,9 @@ output:
     toc_float: true
 ---
 
-This page provides an interactive way to view the data frames used in the [ModernDive](http://moderndive.com) textbook.  You can click on the **Chapter**
-the specific data frame is introduced in the floating Table of Contents.  The specific
+This page provides an interactive way to view the data frames used in the [ModernDive](http://moderndive.com) textbook.  It will take a few seconds to load initially.  
+
+You can click on the **Chapter** the specific data frame is introduced in the floating Table of Contents.  The specific
 package the data frame is included in is provided as a secondary header.  
 
 These interactive data tables were created using the [`DT` R package](https://rstudio.github.io/DT/).  For data frames larger than 100 rows, the data has been split onto multiple
