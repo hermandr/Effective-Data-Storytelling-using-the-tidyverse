@@ -9,7 +9,9 @@ description : To supplement learning of the material covered at http://moderndiv
 
 - All of the needed packages from the textbook are available to you here.  Note that the `View` function will not work on DataCamp as it does in RStudio, but I have added interactive versions of many of the data frames below and this simulates the `View` function well.
 
+<center>
 [ModernDive data frames](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/moderndive.html)
+</center>
 
 - Please use this as a playground to answer the Learning Checks throughout the [ModernDive](http://moderndive.com) textbook.  There are no problems to complete here, but please do play around as needed!
 
