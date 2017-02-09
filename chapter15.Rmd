@@ -13,6 +13,8 @@ description : To supplement learning of the material covered at http://moderndiv
 [ModernDive data frames](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/moderndive.html)
 </center>
 
+<br>
+
 - Please use this as a playground to answer the Learning Checks throughout the [ModernDive](http://moderndive.com) textbook.  There are no problems to complete here, but please do play around as needed!
 
 - Remember to use the `library` function to load any needed package given at the top of the chapters of the [ModernDive](http://moderndive.com) textbook.
