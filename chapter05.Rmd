@@ -83,6 +83,7 @@ data(bechdel)
 ```{r}
 library(fivethirtyeight)
 bechdel$clean_test <- factor(bechdel$clean_test,
+    ordered = TRUE,
     levels = c("nowomen", "notalk", "men", "dubious", "ok"))
 
 # Identify the variable that gives pass/fail of the Bechdel test
