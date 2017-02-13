@@ -98,3 +98,36 @@ joined_flights <- inner_join(x = flights, y = airlines, by = "carrier")
 interact_df(joined_flights)
 ```
 
+# Chapter 4
+
+<p style="font-size:36px">Derived data</p>
+
+## `all_alaska_flights`
+
+```{r}
+library(nycflights13)
+all_alaska_flights <- flights %>% 
+  filter(carrier == "AS")
+interact_df(all_alaska_flights)
+```
+
+***
+
+## `early_january_weather`
+
+```{r}
+early_january_weather <- weather %>% 
+  filter(origin == "EWR" & month == 1 & day <= 15)
+interact_df(early_january_weather)
+```
+
+***
+
+## `flights_namedports`
+
+```{r}
+flights_namedports <- flights %>% 
+  inner_join(airports, by = c("origin" = "faa"))
+interact_df(flights_namedports)
+```
+
