@@ -182,7 +182,6 @@ Recall that the line-graph in the last exercise had some strange features to it.
 
 *** =instructions
 - Plot `births` on the vertical axis and `date` on the horizontal axis using a point for the geometry.
-- THINK ABOUT IT:  Now that you've produced this scatter-plot, why were the lines going up and down across the plot?
 - Plot `births` on the vertical axis and `date` on the horizontal axis as a scatter-plot.  Then color the points based on `day_of_week`.
 
 *** =hint
@@ -221,6 +220,6 @@ ggplot(data = US_births_2014,
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
-success_msg("Great work!  <br><br> THINK ABOUT IT:  How does this coloring help to understand the distribution of births across the year?  Can you identify the points that don't follow the patterns and what days they correspond to?")
+success_msg("Great work!  <br><br> THINK ABOUT IT: Now that you've produced this scatter-plot, why were the lines going up and down across the plot? <br><br> How does this coloring help to understand the distribution of births across the year?  Can you identify the points that don't follow the patterns and what days they correspond to?")  
 test_error()
 ```
