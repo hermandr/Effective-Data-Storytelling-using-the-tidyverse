@@ -27,6 +27,7 @@ description : To supplement learning of the material covered at http://moderndiv
 library(tidyverse)
 library(nycflights13)
 library(fivethirtyeight)
+library(gapminder)
 total_fertility <- readr::read_csv("https://ismayc.github.io/soc301_s2017/slides/data/total_fertility.csv") 
 colnames(total_fertility)[1] <- "country"
 total_fertility <- total_fertility %>% 
