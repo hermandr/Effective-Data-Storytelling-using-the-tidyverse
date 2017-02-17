@@ -20,3 +20,52 @@ description : To supplement learning of the material covered at http://moderndiv
 - Remember to use the `library` function to load any needed package given at the top of the chapters of the [ModernDive](http://moderndive.com) textbook.
 
 - Pressing the **Submit Answer** button will run all of the code in **script.R** in your **R Console**.  If you'd like to test things out, feel free to use the **R Console** directly.
+
+*** =pre_exercise_code
+```{r}
+# Week 03 Thurs
+library(tidyverse)
+library(nycflights)
+library(fivethirtyeight)
+total_fertility <- readr::read_csv("https://ismayc.github.io/soc301_s2017/slides/data/total_fertility.csv") 
+colnames(total_fertility)[1] <- "country"
+total_fertility <- total_fertility %>% 
+  select(country, `1945`:`2015`) %>% 
+  na.omit()
+simple_ex <-
+  data_frame(
+    A = c(1, 2, 3, 4),
+    B = c(1, 2, 3, 4),
+    C = c(3, 2, 1, 2),
+    D = c("a", "a", "b", "b")
+  )
+set.seed(3)
+total_fert_tidy <- total_fertility %>% 
+  sample_n(6) %>% 
+  gather(-country, key = "year", value = "fert") %>% 
+  mutate(year = as.numeric(year)) 
+gap2007 <- gapminder %>% filter(year == 2007)
+
+# Week 03 Tues
+ideology <- read_csv("http://bit.ly/ideology-csv")
+police_join <- inner_join(x = police_locals, y = ideology, 
+                          by = "city")
+dem_score <- read_csv("https://ismayc.github.io/soc301_s2017/slides/data/dem_score.csv")
+
+
+## ModernDive.com
+
+# Chapter 3
+
+joined_flights <- inner_join(x = flights, y = airlines, by = "carrier")
+
+# Chapter 4
+
+all_alaska_flights <- flights %>% filter(carrier == "AS")
+early_january_weather <- weather %>% 
+  filter(origin == "EWR" & month == 1 & day <= 15)
+flights_table <- flights %>% dplyr::count(carrier)
+flights_namedports <- flights %>% 
+  inner_join(airports, by = c("origin" = "faa"))
+
+```
