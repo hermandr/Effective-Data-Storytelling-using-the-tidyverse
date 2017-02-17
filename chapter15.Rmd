@@ -25,7 +25,7 @@ description : To supplement learning of the material covered at http://moderndiv
 ```{r}
 # Week 03 Thurs
 library(tidyverse)
-library(nycflights)
+library(nycflights13)
 library(fivethirtyeight)
 total_fertility <- readr::read_csv("https://ismayc.github.io/soc301_s2017/slides/data/total_fertility.csv") 
 colnames(total_fertility)[1] <- "country"
