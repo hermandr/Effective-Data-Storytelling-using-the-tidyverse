@@ -140,16 +140,16 @@ ten_freq_dests <- flights %>%
 
 # Chapter 6
 
-profiles_subset <- profiles %>% filter(between(height, 55, 85))
-set.seed(2017)
-profiles_sample1 <- profiles_subset %>%
-  resample(size = 100, replace = FALSE)
-profiles_sample2 <- profiles_subset %>% resample(size = 100, replace = FALSE)
-profiles_sample3 <- profiles_subset %>% filter(height >= 72)
-sample_means <- do(5000) *
-  (profiles_subset %>% resample(size = 100, replace = FALSE) %>%
-  summarize(mean_height = mean(height)))
-simGuesses <- do(5000) * rflip(10)
+# profiles_subset <- profiles %>% filter(between(height, 55, 85))
+# set.seed(2017)
+# profiles_sample1 <- profiles_subset %>%
+#   resample(size = 100, replace = FALSE)
+# profiles_sample2 <- profiles_subset %>% resample(size = 100, replace = FALSE)
+# profiles_sample3 <- profiles_subset %>% filter(height >= 72)
+# sample_means <- do(5000) *
+#   (profiles_subset %>% resample(size = 100, replace = FALSE) %>%
+#   summarize(mean_height = mean(height)))
+# simGuesses <- do(5000) * rflip(10)
 
 # # Chapter 7
 # 
