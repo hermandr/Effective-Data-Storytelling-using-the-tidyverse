@@ -160,9 +160,9 @@ bos_sfo <- flights %>% na.omit() %>%
 bos_sfo_summary <- bos_sfo %>% group_by(dest) %>% 
   summarize(mean_time = mean(air_time),
             sd_time = sd(air_time))
-pvalue_tea <- simGuesses %>%
-  filter(heads >= 9) %>%
-  nrow() / nrow(simGuesses)
+#pvalue_tea <- simGuesses %>%
+#  filter(heads >= 9) %>%
+#  nrow() / nrow(simGuesses)
 movies_trimmed <- movies %>% 
   select(title, year, rating, Action, Romance) %>% 
   filter(!(Action == 1 & Romance == 1)) %>% 
