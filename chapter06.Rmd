@@ -2,7 +2,7 @@
 title       : ggplot2 Review
 description : Identifying and creating the appropriate plot based on different types of variables
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:f6d3394a54
 ## Fixing an inappropriate plot
 
 When one doesn't properly use the correct plot based on the type of variables, some pretty strange plots can be produced.  These plots are hard to interpret and often extremely ineffective at telling a story about the data.  This exercise and the ones that follow will have you examine why a plot is incorrect and/or fix incorrect code to make a more appropriate plot.
