@@ -1,0 +1,119 @@
+---
+title       : ggplot2 Review
+description : Identifying and creating the appropriate plot based on different types of variables
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:f6d3394a54
+## Fixing an inappropriate plot for one variable
+
+When one doesn't properly use the correct plot based on the type of variables, some pretty strange plots can be produced.  These plots are hard to interpret and often extremely ineffective at telling a story about the data.  This exercise and the ones that follow will have you examine why a plot is incorrect and/or fix incorrect code to make a more appropriate plot.
+
+Read over the 2014 article from FiveThirtyEight.com entitled  "The Economic Guide To Picking A College Major" [here](http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/).  You can find the data corresponding to the story as `college_all_ages` in the `fivethirtyeight` R package.  We are interested in looking at the distribution of the `unemployment_rate` variable in this `college_all_ages` data frame.
+
+*** =instructions
+- Fix the code given to produce an appropriate plot looking at how `unemployment_rate` varies in the `college_all_ages` data frame.
+- Make sure to also use the `color = "white"` argument to better
+clarify your plot.
+
+*** =hint
+- What type of variable is `unemployment_rate`?
+- The Coggle mind map may be of assistance [here](https://coggle.it/diagram/V_G2gzukTDoQ-aZt-).
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+library(ggplot2)
+ggplot(data = college_all_ages, mapping = aes(x = unemployment_rate)) +
+  geom_bar()
+```
+
+*** =sample_code
+```{r}
+library(fivethirtyeight)
+library(ggplot2)
+ggplot(data = college_all_ages, mapping = aes(x = unemployment_rate)) +
+  geom_bar()
+```
+
+*** =solution
+```{r}
+library(fivethirtyeight)
+library(ggplot2)
+ggplot(data = college_all_ages, mapping = aes(x = unemployment_rate)) +
+  geom_histogram(color = "white")
+```
+
+*** =sct
+```{r}
+test_library_function("ggplot2")
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE,
+            check_geom_params = TRUE)
+success_msg("Nicely done! <br><br> THINK ABOUT IT:  Why is a barplot inappropriate when looking at the distribution of a numerical variable?")
+test_error()
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:5d55c9a096
+## Fixing an inappropriate plot for two variables
+
+The last exercise showed the distribution of `unemployment_rate` across all majors.  The first natural question that comes to mind is how
+the distribution varies while taking into account different categories of college majors.  The plot shown is one attempt at doing so, but has some major flaws.  Your task is to produce a more appropriate plot after joining with another data frame to use a variable with fewer categories than `major_category`.
+
+
+*** =instructions
+- Join with the `divisions` data frame to look-up the values of division for each of the values of `major_category`.  (You should print the `divisions` data frame in the Console to get a sense for how `major_category` levels were grouped.) 
+- Give `college_with_divisions` as a name to this joined data frame.
+- Write code to produce an appropriate plot looking at how `unemployment_rate` varies across `division` in the `college_with_divisions` data frame.  Your plot should not involve a histogram in any way.
+
+*** =hint
+- What type of variable is `unemployment_rate`?
+- The Coggle mind map may be of assistance [here](https://coggle.it/diagram/V_G2gzukTDoQ-aZt-).
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+library(ggplot2)
+library(readr)
+ggplot(data = college_all_ages, mapping = aes(x = unemployment_rate, fill = major_category)) +
+  geom_histogram(color = "white")
+divisions <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/divisions.csv")
+```
+
+*** =sample_code
+```{r}
+# Make sure to load the needed packages!
+
+# Join first to create `college_with_divisions`
+
+# Now create an appropriate plot that is not related to a histogram
+
+
+```
+
+*** =solution
+```{r}
+# Make sure to load the needed packages!
+library(fivethirtyeight)
+library(ggplot2)
+library(dplyr)
+# Join first to create data frame with a name of `college_with_divisions`
+college_with_divisions <- inner_join(x = college_all_ages,
+                                     y = divisions,
+                                     by = "major_category")
+# Now create an appropriate plot that is not related to a histogram
+ggplot(data = college_with_divisions, 
+       mapping = aes(x = division, y = unemployment_rate)) +
+  geom_boxplot()
+```
+
+*** =sct
+```{r}
+test_library_function("ggplot2")
+test_library_function("fivethirtyeight")
+test_library_function("dplyr")
+test_error()
+test_function("inner_join", args = "x")
+test_function("inner_join", args = "y")
+test_function("inner_join", args = "by")
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
+success_msg("Nicely done! <br><br> THINK ABOUT IT:  What does this plot tell us about the variability of unemployment rates based on division?")
+test_error()
+```
