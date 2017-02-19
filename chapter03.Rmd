@@ -58,6 +58,7 @@ ggplot(data = police_join_cost,
 ```{r}
 test_library_function("tibble")
 test_library_function("ggplot2")
+test_function("glimpse", args = "x")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 success_msg("Good work! <br><br> THINK ABOUT IT:  After looking over the plot, is it the type of relationship you expected (negative, positive, not much at all, etc.)?")
 test_error()
