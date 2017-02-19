@@ -231,7 +231,7 @@ alaska_flights <- flights %>%
   resample(size = 50, replace = FALSE)
 delay_fit <- lm(formula = arr_delay ~ dep_delay, data = alaska_flights)
 b1_obs <- tidy(delay_fit)$estimate[2]
-rand_slope_distn <- mosaic::do(10000) *
+rand_slope_distn <- mosaic::do(5000) *
   (lm(formula = shuffle(arr_delay) ~ dep_delay, data = alaska_flights) %>%
      coef())
 fits <- augment(delay_fit)
