@@ -117,3 +117,181 @@ test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 success_msg("Nicely done! <br><br> THINK ABOUT IT:  What does this plot tell us about the variability of unemployment rates based on division?")
 test_error()
 ```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:826d4acb52
+## Fix the incorrect code
+
+Recall the `bechdel` data frame you have worked with previously.  Your friend is trying to produce the side-by-side barplot shown, but is having a really tough time.  Fix their code below to produce the plot.  Note the addition of `labs` was made to change the labels for each of the axes and the title.
+
+*** =instructions
+
+*** =hint
+- Use `?labs` to see how to change the labels of plots.
+
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+library(dplyr)
+library(ggplot2)
+data(bechdel)
+year_bins <- c("1970-'74", "1975-'79", "1980-'84", "1985-'89",
+               "1990-'94", "1995-'99", "2000-'04", "2005-'09",
+               "2010-'13")
+bechdel <- bechdel %>%
+  mutate(five_year = cut(year, 
+                         breaks = seq(1969, 2014, 5), 
+                         labels = year_bins)) %>% 
+  mutate(clean_test = factor(clean_test, 
+                             levels = c("nowomen", "notalk", "men", "dubious", "ok")))
+ggplot(data = bechdel, mapping = aes(x = five_year, fill = binary) +
+    geom_bar(position = "dodge")
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+test_error()
+```
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:478b35a5f1
+## What happened here?
+
+We now shift our data set of interest to the `flying` data frame in the `fivethirtyeight` package.  First, read the relevant 2014 article on FiveThirtyEight.com [here](https://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/). Next, carefully read over the documentation for `flying` via `?fivethirtyeight::flying` as well before you begin this problem to better understand what the variables represent.  Note here that we use `na.omit(flying)` instead of `flying` to remove all of the rows with missing values in the data frame before plotting.
+
+The plot that is given is not an appropriate plot for looking at the relationship between `age` and `recline_rude`.  What would be the more appropriate plot?
+
+
+
+*** =instructions
+
+- Boxplot
+- Line graph
+- Faceted histogram
+- Stacked barplot
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+library(ggplot2)
+ggplot(data = na.omit(flying), mapping = aes(x = age, y = recline_rude)) +
+        geom_point()
+```
+
+*** =sct
+```{r}
+msg_bad <- "That is not correct!"
+msg_success <- "Since both variables are categorical, a barplot is the best option here.  We are interested in looking at how the percentages of opinions vary across age and there are only three levels to `recline_rude` so a stacked barplot is a good option here."
+test_mc(correct = 4, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_success))
+```
+
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:7405088f95
+## Reverse engineer the barplot
+
+Let's create the appropriate plot referenced in the last exercise.
+
+
+*** =instructions
+- Give the correct code needed to produce the plot shown based on the `na.omit(flying)` data frame derived from `flying` in the `fivethirtyeight` package.  Remember to load the needed packages!
+
+
+*** =hint
+- The `position = "fill"` argument is used in `geom_bar` here.  Refer back to the Bechdel problem in the Barplots chapter for more explanation.
+- Recall that stacked barplots use `fill = ` to specify how the bars should be shaded.
+
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+library(ggplot2)
+ggplot(data = na.omit(flying), mapping = aes(x = age, fill = recline_rude)) +
+    geom_bar(position = "fill", color = "white")
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+library(fivethirtyeight)
+library(ggplot2)
+ggplot(data = flying, mapping = aes(x = age, fill = recline_rude)) +
+    geom_bar(position = "fill", color = "white")
+```
+
+*** =sct
+```{r}
+test_library_function("ggplot2")
+test_library_function("fivethirtyeight")
+test_error()
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
+success_msg("Nicely done! <br><br> THINK ABOUT IT:  What does this plot tell us about how different age groups view the rudeness of reclining seats on airplanes?")
+test_error()
+```
+
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:1c63ea8be9
+## Unpacking the pieces
+
+Recall the [`police_tidy`](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/police_tidy.html) data frame you worked with earlier in the course.  Let's investigate four variables at once in the following plot.
+
+*** =instructions
+- Write the code necessary to reproduce this plot focused on having you look into multivariate relationships in the data.
+- Note that you don't need to load the `fivethirtyeight` package here since the `police_tidy` data frame has been loaded into your environment for you.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+data(police_locals)
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(tidyr)
+ideology <- read_csv("http://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/datasets/ideology.csv")
+police_join <- inner_join(x = police_locals, y = ideology, by = "city")
+cost_of_living <- read_csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_3085/datasets/cost_of_living.csv")
+police_join_cost <- inner_join(x = police_join, y = cost_of_living, by = "state")
+police_tidy <- police_join_cost %>% 
+  gather(key = "race", value = "reside_perc", all:asian) %>% 
+  filter(race %in% c("white", "non_white")) %>% 
+  mutate(col_group = factor(col_group, levels = c("high", "mid", "low")))
+ggplot(data = police_tidy, mapping = aes(x = index, y = reside_perc)) +
+  geom_point(aes(color = race, shape = state_ideology))
+```
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+```{r}
+library(ggplot2)
+ggplot(data = police_tidy, mapping = aes(x = index, y = reside_perc)) +
+  geom_point(aes(color = race, shape = state_ideology)) 
+```
+
+*** =sct
+```{r}
+test_library_function("ggplot2")
+test_error()
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
+success_msg("Nicely done! <br><br> THINK ABOUT IT:  What stands out to you as you view this plot? Particularly, how do the relationships change when comparing white and non-white?  What about Conservative versus Liberal?")
+test_error()
+```
