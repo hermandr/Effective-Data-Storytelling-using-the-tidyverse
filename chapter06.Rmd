@@ -118,15 +118,15 @@ success_msg("Nicely done! <br><br> THINK ABOUT IT:  What does this plot tell us 
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:826d4acb52
+--- type:NormalExercise lang:r xp:100 skills:1 key:f3b3d2cde5
 ## Fix the incorrect code
 
-Recall the `bechdel` data frame you have worked with previously.  Your friend is trying to produce the side-by-side barplot shown, but is having a really tough time.  Fix their code below to produce the plot.  Note the addition of `labs` was made to change the labels for each of the axes and the title.
+Recall the `bechdel` data frame you have worked with previously including the five-year time increments.  It has been loaded into your environment here.  Your friend is trying to produce the side-by-side barplot shown, but is having a really tough time and has made many mistakes in their code.  
 
 *** =instructions
+- Fix their code given to produce the plot shown.
 
 *** =hint
-- Use `?labs` to see how to change the labels of plots.
 
 
 *** =pre_exercise_code
@@ -144,22 +144,31 @@ bechdel <- bechdel %>%
                          labels = year_bins)) %>% 
   mutate(clean_test = factor(clean_test, 
                              levels = c("nowomen", "notalk", "men", "dubious", "ok")))
-ggplot(data = bechdel, mapping = aes(x = five_year, fill = binary) +
+ggplot(data = bechdel, mapping = aes(x = five_year, fill = binary)) +
     geom_bar(position = "dodge")
 ```
 
 *** =sample_code
 ```{r}
-
+library(ggplot)
+ggplot2(data = bechdel, 
+        mapping = aes(x = "five_year", y = binary) +
+    geom_bar(fill = binary, position = dodge)
+    
 ```
 
 *** =solution
 ```{r}
-
+library(ggplot2)
+ggplot(data = bechdel, 
+       mapping = aes(x = five_year, fill = binary)) +
+    geom_bar(position = "dodge")
 ```
 
 *** =sct
 ```{r}
+test_library_function("ggplot2")
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_error()
 ```
 
