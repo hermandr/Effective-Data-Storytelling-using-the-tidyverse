@@ -1,11 +1,11 @@
 ---
 title       : ggplot2 Review
-description : Identifying and creating the appropriate plot based on different types of variables
+description : Identifying and creating the appropriate plot based on different types of variables using the ggplot2 package
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f6d3394a54
 ## Fixing an inappropriate plot for one variable
 
-When one doesn't properly use the correct plot based on the type of variable(s) in the data, some pretty strange plots can be produced.  These plots are hard to interpret and often extremely ineffective at telling a story about the data.  This exercise and the ones that follow will have you examine why a plot is incorrect and/or fix incorrect code to make a more appropriate plot.
+When one doesn't properly use the correct plot based on the type of variables, some pretty strange plots can be produced.  These plots are hard to interpret and often extremely ineffective at telling a story about the data.  This exercise and the ones that follow will have you examine why a plot is incorrect and/or fix incorrect code to make a more appropriate plot.
 
 Read over the 2014 article from FiveThirtyEight.com entitled  "The Economic Guide To Picking A College Major" [here](http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/).  You can find the data corresponding to the story as `college_all_ages` in the `fivethirtyeight` R package.  We are interested in looking at the distribution of the `unemployment_rate` variable in this `college_all_ages` data frame.
 
