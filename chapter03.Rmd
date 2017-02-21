@@ -182,8 +182,7 @@ test_error()
 Recall that the line-graph in the last exercise had some strange features to it.  Let's explore what the points themselves look like and then color the points based on another variable in the second plot.  The `US_births_2014` data frame has been loaded for you already.
 
 *** =instructions
-- Plot `births` on the vertical axis and `date` on the horizontal axis using a point for the geometry.
-- Plot `births` on the vertical axis and `date` on the horizontal axis as a scatter-plot.  Then color the points based on `day_of_week`.
+- Plot `births` on the vertical axis and `date` on the horizontal axis using a point for the geometry.  Then color the points based on `day_of_week`.  (You might want to enter your code into the Console first plot without color and then add the color later after you have that working.)
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
@@ -210,17 +209,12 @@ library(ggplot2)
 ggplot(data = US_births_2014,
        mapping = aes(x = date,
            y = births)) +
-  geom_point()
-ggplot(data = US_births_2014,
-       mapping = aes(x = date,
-           y = births)) +
   geom_point(aes(color = day_of_week))  
 ```
 
 *** =sct
 ```{r}
 test_library_function("ggplot2")
-test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 success_msg("Great work!  <br><br> THINK ABOUT IT: Now that you've produced this scatter-plot, why were the lines going up and down across the plot? <br><br> How does this coloring help to understand the distribution of births across the year?  Can you identify the points that don't follow the patterns and what days they correspond to?")  
 test_error()
