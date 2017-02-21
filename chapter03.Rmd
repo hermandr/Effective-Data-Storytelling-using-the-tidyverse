@@ -221,6 +221,7 @@ ggplot(data = US_births_2014,
 ```{r}
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
+test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 success_msg("Great work!  <br><br> THINK ABOUT IT: Now that you've produced this scatter-plot, why were the lines going up and down across the plot? <br><br> How does this coloring help to understand the distribution of births across the year?  Can you identify the points that don't follow the patterns and what days they correspond to?")  
 test_error()
 ```
