@@ -9,12 +9,13 @@ Suppose we are interested in analyzing the relationship between `all` and `index
 `police_join_cost` data frame.
 
 *** =instructions
-- What types of variables are `all` and `index`?  Use the `glimpse` function in the `tibble` package to find out.
+- What types of variables are `all` and `index`?  Use the `glimpse` function in the `tibble` package to find out what type they and all of the other variables in `police_join_cost` are.
 - Plot `index` on the horizontal axis and `all` on the vertical axis in an appropriate plot.
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
 - Remember that we use the `aes` function to map aesthetics.  Also be sure there are two `))` before the `+`:  one for the `ggplot` call and one for the `aes` call.
+- Recall that `glimpse` expects only the name of a data frame as its argument, not variables.
 
 *** =pre_exercise_code
 ```{r}
