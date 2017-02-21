@@ -182,7 +182,7 @@ test_error()
 Recall that the line-graph in the last exercise had some strange features to it.  Let's explore what the points themselves look like and then color the points based on another variable in the second plot.  The `US_births_2014` data frame has been loaded for you already.
 
 *** =instructions
-- Plot `births` on the vertical axis and `date` on the horizontal axis using a point for the geometry.  Then color the points based on `day_of_week`.  (You might want to enter your code into the Console first plot without color and then add the color later after you have that working.)
+- Plot `births` on the vertical axis and `date` on the horizontal axis using a point for the geometry.  Then color the points based on `day_of_week`.  (You might want to enter your code into the Console first to plot without color and then add the color later after you have that working.)
 
 *** =hint
 - The horizontal axis is the `x` axis and the vertical axis is the `y` axis.
