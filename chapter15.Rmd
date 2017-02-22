@@ -57,6 +57,9 @@ police_join <- inner_join(x = police_locals, y = ideology,
                           by = "city")
 dem_score <- read_csv("https://ismayc.github.io/soc301_s2017/slides/data/dem_score.csv")
 
+# Week 04 Tues
+US_births_2014 <- US_births_2000_2014 %>% filter(year == 2014)
+
 
 ## ModernDive.com
 
