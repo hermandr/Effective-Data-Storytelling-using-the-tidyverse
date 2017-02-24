@@ -117,6 +117,7 @@ ggplot(data = bechdel,
 
 *** =sct
 ```{r}
+test_library_function("tibble")
 test_library_function("ggplot2")
 test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
 
