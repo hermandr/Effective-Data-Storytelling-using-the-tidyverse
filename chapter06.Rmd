@@ -237,7 +237,7 @@ ggplot(data = na.omit(flying), mapping = aes(x = age, fill = recline_rude)) +
 ```{r}
 library(fivethirtyeight)
 library(ggplot2)
-ggplot(data = flying, mapping = aes(x = age, fill = recline_rude)) +
+ggplot(data = na.omit(flying), mapping = aes(x = age, fill = recline_rude)) +
     geom_bar(position = "fill", color = "white")
 ```
 
