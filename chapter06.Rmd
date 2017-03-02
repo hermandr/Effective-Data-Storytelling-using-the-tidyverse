@@ -59,7 +59,7 @@ the distribution varies while taking into account different categories of colleg
 
 
 *** =instructions
-- Join with the `divisions` data frame to look-up the values of division for each of the values of `major_category` in `college_all_ages`.  (You should print the `divisions` data frame in the Console to get a sense for how `major_category` levels were grouped and also notice that `division` is another variable in the `divisions` data frame.) 
+- Join with the `divisions` data frame to look-up the values of division for each of the values of `major_category` in `college_all_ages`.  (You should print the `divisions` data frame in the Console to get a sense for how `major_category` levels were grouped in the `division` variable in the `divisions` data frame.) 
 - Give `college_with_divisions` as a name to this joined data frame.
 - Write code to produce an appropriate plot looking at how `unemployment_rate` varies across `division` in the `college_with_divisions` data frame.  Your plot should not involve a histogram in any way.
 
