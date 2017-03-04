@@ -24,7 +24,7 @@ An interactive table of the `ideology` data frame is  [here](https://ismayc.gith
 columns to the `police_locals` data frame where the key variable is `city` in both data frames.  (Note the
 use of `library(dplyr)` here.  You will always need to load the package first if you would like
 to use the functions inside it.)
-- Recall that the main arguments to `inner_join` are `x`, `y`, and `by`.  `x` corresponds to the data frame you would like to add columns to.  `y` corresponds to the data frame you'd like to add columns from.  `by` corresponds to the name (or names) of the key vectors that you'd like to join the two data frames together by.
+- Recall that the main arguments to `inner_join` are `x`, `y`, and `by`.  `x` corresponds to the data frame you would like to add columns to.  `y` corresponds to the data frame you'd like to add columns from.  `by` corresponds to the name (or names) of the key vectors that you'd like to join the two data frames together by.  Note that the names of the variables for `by` must be inside quotation marks.
 - Assign the name `police_join` to this expanded data frame.
 
 
