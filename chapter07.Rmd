@@ -2,7 +2,7 @@
 title       : Filtering, Grouping, & Summarizing
 description : Choose a subset of rows and summarize a data frame in total and across different levels of other variables using the dplyr package
 
---- type:NormalExercise lang:r xp:100 skills:1 key:885a7aacb2
+--- type:NormalExercise lang:r xp:100 skills:1,4 key:885a7aacb2
 ## Fix incorrect code
 
 Recall the `US_births_2000_2014` data set in the `fivethirtyeight` package used in the 2016 article from FiveThirtyEight.com entitled "Some People Are Too Superstitious To Have A Baby On Friday The 13th" [here](https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/).  
@@ -46,7 +46,7 @@ success_msg("Nicely done!")
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:04a7b0afce
+--- type:NormalExercise lang:r xp:100 skills:1,4 key:04a7b0afce
 ## Logical operators and the %in% operator
 
 Suppose we'd like to choose births data for the years 2012 to 2014.  The code given shows you many different ways to
@@ -113,7 +113,7 @@ success_msg("Nicely done!")
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:bac8392cbc
+--- type:NormalExercise lang:r xp:100 skills:1,4 key:bac8392cbc
 ## Matching conditions on multiple variables
 
 You can use a comma between arguments to specify you'd like all of the conditions to be met.  This is the same as using the
@@ -233,7 +233,7 @@ success_msg("Nice work!")
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:e52367fd4e
+--- type:NormalExercise lang:r xp:100 skills:1,4 key:e52367fd4e
 ## Overall mean and median
 
 The plot in the previous exercise has shown there are some outliers in the data for US births on weekdays in 2013.  Let's use the `summarize` function to get an idea for how these outliers may affect the shape of the `births` variable in
@@ -280,7 +280,7 @@ success_msg("Nicely done!")
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:66f450f2cf
+--- type:NormalExercise lang:r xp:100 skills:1,4 key:66f450f2cf
 ## Summarizing over another variable
 
 Instead of looking at the overall mean and median across all of 2013 weekdays, we can calculate the
@@ -390,7 +390,7 @@ success_msg("Great work!")
 test_error()
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:755d91471c
+--- type:NormalExercise lang:r xp:100 skills:1,4 key:755d91471c
 ## Grouping by multiple variables
 
 One great feature of the `group_by` function is its ability to group by more than one variable to show what the
