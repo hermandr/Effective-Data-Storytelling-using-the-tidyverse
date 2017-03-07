@@ -55,7 +55,9 @@ police_join <- inner_join(x =  ,
 library(dplyr)
 # Join police_locals with ideology by city
 # Provide police_join as the name
-police_join <- inner_join(x = police_locals, y = ideology, by = "city")
+police_join <- inner_join(x = police_locals, 
+                          y = ideology, 
+                          by = "city")
 ```
 
 *** =sct
@@ -202,6 +204,7 @@ Is the `bechdel` data frame tidy?  You can view an interactive table of it [here
 
 *** =hint
 - You can find help on `bechdel` via `?bechdel` in the R console.
+- 
 *** =pre_exercise_code
 ```{r}
 library(fivethirtyeight)
