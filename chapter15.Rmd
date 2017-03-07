@@ -60,7 +60,6 @@ dem_score <- read_csv("https://ismayc.github.io/soc301_s2017/slides/data/dem_sco
 # Week 04 Tues
 US_births_2014 <- US_births_2000_2014 %>% filter(year == 2014)
 
-
 ## ModernDive.com
 
 # Chapter 3
