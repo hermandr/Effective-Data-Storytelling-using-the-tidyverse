@@ -575,6 +575,7 @@ test_or({
   geom_bar_fun <- alt_ex_1 %>% check_function("geom_bar")
   geom_bar_fun %>% check_arg("position") %>% check_equal(eval = FALSE)
   geom_bar_fun %>% check_arg("color") %>% check_equal(eval = FALSE)
+  geom_bar_fun %>% check_arg("mapping")
   alt_ex_1 %>% check_function("aes", index = 2) %>% check_arg("fill") %>% check_equal(eval = FALSE)
   scale_fill_manual_fun <- ex() %>% check_function("scale_fill_manual")
   scale_fill_manual_fun %>% check_arg("values") %>% check_equal(eval = FALSE)

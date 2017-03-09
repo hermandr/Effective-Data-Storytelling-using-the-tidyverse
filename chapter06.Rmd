@@ -168,7 +168,33 @@ ggplot(data = bechdel,
 *** =sct
 ```{r}
 test_library_function("ggplot2")
-test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE)
+test_or({
+  # match original solution
+  ggplot_fun <- ex() %>% check_function("ggplot")
+  ggplot_fun %>% check_arg("data") %>% check_equal(eval = FALSE)
+  ggplot_fun %>% check_arg("mapping")
+  aes_fun <- ex() %>% check_function("aes")
+  aes_fun %>% check_arg("x") %>% check_equal(eval = FALSE)
+  aes_fun %>% check_arg("fill") %>% check_equal(eval = FALSE)
+  geom_bar_fun <- ex() %>% check_function("geom_bar")
+  geom_bar_fun %>% check_arg("position") %>% check_equal(eval = FALSE)
+}, {
+  # match solution 1:
+  sol_code1 <- 'ggplot(data = bechdel, 
+       mapping = aes(x = five_year)) +
+    geom_bar(mapping = aes(fill = binary), position = "dodge")'
+  alt_ex_1 <- ex() %>% override_solution(sol_code1)
+
+  ggplot_fun <- alt_ex_1 %>% check_function("ggplot")
+  ggplot_fun %>% check_arg("data") %>% check_equal(eval = FALSE)
+  ggplot_fun %>% check_arg("mapping")
+  aes_fun <- alt_ex_1 %>% check_function("aes")
+  aes_fun %>% check_arg("x") %>% check_equal(eval = FALSE)
+  geom_bar_fun <- alt_ex_1 %>% check_function("geom_bar")
+  geom_bar_fun %>% check_arg("position") %>% check_equal(eval = FALSE)
+  geom_bar_fun %>% check_arg("mapping")
+  alt_ex_1 %>% check_function("aes", index = 2) %>% check_arg("fill") %>% check_equal(eval = FALSE)
+})
 test_error()
 ```
 
@@ -202,8 +228,6 @@ msg_bad <- "That is not correct!"
 msg_success <- "Since both variables are categorical, a barplot is the best option here.  We are interested in looking at how the percentages of opinions vary across age and there are only three levels to `recline_rude` so a stacked barplot is a good option here."
 test_mc(correct = 4, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_success))
 ```
-
-
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7405088f95
 ## Reverse engineer the barplot
@@ -246,7 +270,34 @@ ggplot(data = na.omit(flying), mapping = aes(x = age, fill = recline_rude)) +
 test_library_function("ggplot2")
 test_library_function("fivethirtyeight")
 test_error()
-test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
+test_or({
+  # match original solution
+  ggplot_fun <- ex() %>% check_function("ggplot")
+  ggplot_fun %>% check_arg("data") %>% check_equal(eval = FALSE)
+  ggplot_fun %>% check_arg("mapping")
+  aes_fun <- ex() %>% check_function("aes")
+  aes_fun %>% check_arg("x") %>% check_equal(eval = FALSE)
+  aes_fun %>% check_arg("fill") %>% check_equal(eval = FALSE)
+  geom_bar_fun <- ex() %>% check_function("geom_bar")
+  geom_bar_fun %>% check_arg("position") %>% check_equal(eval = FALSE)
+  geom_bar_fun %>% check_arg("color") %>% check_equal(eval = FALSE)
+}, {
+  # match solution 1:
+  sol_code1 <- 'ggplot(data = na.omit(flying), mapping = aes(x = age)) +
+    geom_bar(mapping = aes(fill = recline_rude), position = "fill", color = "white")'
+  alt_ex_1 <- ex() %>% override_solution(sol_code1)
+
+  ggplot_fun <- alt_ex_1 %>% check_function("ggplot")
+  ggplot_fun %>% check_arg("data") %>% check_equal(eval = FALSE)
+  ggplot_fun %>% check_arg("mapping")
+  aes_fun <- alt_ex_1 %>% check_function("aes")
+  aes_fun %>% check_arg("x") %>% check_equal(eval = FALSE)
+  geom_bar_fun <- alt_ex_1 %>% check_function("geom_bar")
+  geom_bar_fun %>% check_arg("position") %>% check_equal(eval = FALSE)
+  geom_bar_fun %>% check_arg("color") %>% check_equal(eval = FALSE)
+  geom_bar_fun %>% check_arg("mapping")
+  alt_ex_1 %>% check_function("aes", index = 2) %>% check_arg("fill") %>% check_equal(eval = FALSE)
+})
 success_msg("Nicely done! <br><br> THINK ABOUT IT:  What does this plot tell us about how different age groups view the rudeness of reclining seats on airplanes?")
 test_error()
 ```
@@ -300,7 +351,66 @@ ggplot(data = police_tidy, mapping = aes(x = index, y = reside_perc)) +
 ```{r}
 test_library_function("ggplot2")
 test_error()
-test_ggplot(check_data = TRUE, check_aes = TRUE, check_geom = TRUE, check_geom_params = TRUE)
+test_or({
+  # match original solution
+  ggplot_fun <- ex() %>% check_function("ggplot")
+  ggplot_fun %>% check_arg("data") %>% check_equal(eval = FALSE)
+  ggplot_fun %>% check_arg("mapping")
+  aes_fun <- ex() %>% check_function("aes")
+  aes_fun %>% check_arg("x") %>% check_equal(eval = FALSE)
+  aes_fun %>% check_arg("y") %>% check_equal(eval = FALSE)
+  geom_point_fun <- ex() %>% check_function("geom_point")
+  aes_fun_2 <- geom_point_fun %>% check_arg("mapping")
+  aes_fun_2 %>% check_function("aes", index = 2) %>% check_arg("color") %>% check_equal(eval = FALSE)
+  aes_fun_2 %>% check_function("aes", index = 2) %>% check_arg("shape") %>% check_equal(eval = FALSE)
+}, {
+  # match solution 1:
+  sol_code1 <- 'ggplot(data = police_tidy, mapping = aes(x = index, y = reside_perc, color = race)) +
+  geom_point(aes(shape = state_ideology)) '
+  alt_ex_1 <- ex() %>% override_solution(sol_code1)
+
+  ggplot_fun <- alt_ex_1 %>% check_function("ggplot")
+  ggplot_fun %>% check_arg("data") %>% check_equal(eval = FALSE)
+  ggplot_fun %>% check_arg("mapping")
+  aes_fun <- alt_ex_1 %>% check_function("aes")
+  aes_fun %>% check_arg("x") %>% check_equal(eval = FALSE)
+  aes_fun %>% check_arg("y") %>% check_equal(eval = FALSE)
+  aes_fun %>% check_arg("color") %>% check_equal(eval = FALSE)
+  geom_bar_fun <- alt_ex_1 %>% check_function("geom_point")
+  aes_fun_2 <- geom_point_fun %>% check_arg("mapping")
+  aes_fun_2 %>% check_function("aes", index = 2) %>% check_arg("shape") %>% check_equal(eval = FALSE)
+}, {
+  # match solution 2:
+  sol_code2 <- 'ggplot(data = police_tidy, mapping = aes(x = index, y = reside_perc, shape = state_ideology)) +
+  geom_point(aes(color = race)) '
+  alt_ex_2 <- ex() %>% override_solution(sol_code2)
+
+  ggplot_fun <- alt_ex_2 %>% check_function("ggplot")
+  ggplot_fun %>% check_arg("data") %>% check_equal(eval = FALSE)
+  ggplot_fun %>% check_arg("mapping")
+  aes_fun <- alt_ex_2 %>% check_function("aes")
+  aes_fun %>% check_arg("x") %>% check_equal(eval = FALSE)
+  aes_fun %>% check_arg("y") %>% check_equal(eval = FALSE)
+  aes_fun %>% check_arg("shape") %>% check_equal(eval = FALSE)
+  geom_bar_fun <- alt_ex_2 %>% check_function("geom_point")
+  aes_fun_2 <- geom_point_fun %>% check_arg("mapping")
+  aes_fun_2 %>% check_function("aes", index = 2) %>% check_arg("color") %>% check_equal(eval = FALSE)
+}, {
+  # match solution 3:
+  sol_code3 <- 'ggplot(data = police_tidy, mapping = aes(x = index, y = reside_perc, shape = state_ideology, color = race)) +
+  geom_point()'
+  alt_ex_3 <- ex() %>% override_solution(sol_code3)
+
+  ggplot_fun <- alt_ex_3 %>% check_function("ggplot")
+  ggplot_fun %>% check_arg("data") %>% check_equal(eval = FALSE)
+  ggplot_fun %>% check_arg("mapping")
+  aes_fun <- alt_ex_3 %>% check_function("aes")
+  aes_fun %>% check_arg("x") %>% check_equal(eval = FALSE)
+  aes_fun %>% check_arg("y") %>% check_equal(eval = FALSE)
+  aes_fun %>% check_arg("shape") %>% check_equal(eval = FALSE)
+  aes_fun %>% check_arg("color") %>% check_equal(eval = FALSE)
+  geom_bar_fun <- alt_ex_3 %>% check_function("geom_point")
+})
 success_msg("Nicely done! <br><br> THINK ABOUT IT:  What stands out to you as you view this plot? Particularly, how do the relationships change when comparing white and non-white?  What about Conservative versus Liberal?")
 test_error()
 ```
