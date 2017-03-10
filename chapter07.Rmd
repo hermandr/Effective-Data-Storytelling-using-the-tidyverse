@@ -419,6 +419,7 @@ and you are asked to continue with the piping using `group_by` and `summarize` t
 passenger reclining their seat was rude.  You should determine this proportion across the different levels of `age` and `gender`
 resulting in a data frame of size `8 x 3`.  (Note that, unfortunately, only `"Male"` and `"Female"` were given as options
 on this survey for `gender`.)
+- Assign the name `prop_very` to this calculated proportion in this aggregated data frame.
 - Make sure to print `two_group_prop` to answer the **THINK ABOUT IT** questions that follow.
 
 *** =hint
