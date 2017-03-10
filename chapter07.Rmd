@@ -258,7 +258,7 @@ US_births_weekdays_2013 <- US_births_2000_2014 %>%
 *** =sample_code
 ```{r}
 library(dplyr)
-birth_summ <- US_births_2000_2014 %>% 
+birth_summ <- US_births_weekdays_2013 %>% 
   summarize(mean_births =  (),
             median_births = ())
 ```
@@ -266,7 +266,7 @@ birth_summ <- US_births_2000_2014 %>%
 *** =solution
 ```{r}
 library(dplyr)
-birth_summ <- US_births_2000_2014 %>% 
+birth_summ <- US_births_weekdays_2013 %>% 
   summarize(mean_births = mean(births),
             median_births = median(births))
 ```
