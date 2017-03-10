@@ -456,6 +456,6 @@ test_library_function("fivethirtyeight")
 test_library_function("dplyr")
 test_object("two_group_prop")
 success_msg("Great work! <br><br> THINK ABOUT IT:  What stands out to you as you review these proportions? <br><br>
-What age ranges and gender pairings have the highest and lowest proportions of thinking reclining airline seats are rude?")
+What age ranges and gender pairings have the highest and lowest proportions of thinking reclining airline seats are rude in this survey?")
 test_error()
 ```
