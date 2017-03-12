@@ -258,7 +258,7 @@ US_births_weekdays_2013 <- US_births_2000_2014 %>%
 *** =sample_code
 ```{r}
 library(dplyr)
-birth_summ <- US_births_2000_2014 %>% 
+birth_summ <- US_births_weekdays_2013 %>% 
   summarize(mean_births =  (),
             median_births = ())
 ```
@@ -266,7 +266,7 @@ birth_summ <- US_births_2000_2014 %>%
 *** =solution
 ```{r}
 library(dplyr)
-birth_summ <- US_births_2000_2014 %>% 
+birth_summ <- US_births_weekdays_2013 %>% 
   summarize(mean_births = mean(births),
             median_births = median(births))
 ```
@@ -419,6 +419,7 @@ and you are asked to continue with the piping using `group_by` and `summarize` t
 passenger reclining their seat was rude.  You should determine this proportion across the different levels of `age` and `gender`
 resulting in a data frame of size `8 x 3`.  (Note that, unfortunately, only `"Male"` and `"Female"` were given as options
 on this survey for `gender`.)
+- Assign the name `prop_very` to this calculated proportion in this aggregated data frame.
 - Make sure to print `two_group_prop` to answer the **THINK ABOUT IT** questions that follow.
 
 *** =hint
@@ -455,6 +456,6 @@ test_library_function("fivethirtyeight")
 test_library_function("dplyr")
 test_object("two_group_prop")
 success_msg("Great work! <br><br> THINK ABOUT IT:  What stands out to you as you review these proportions? <br><br>
-What age ranges and gender pairings have the highest and lowest proportions of thinking reclining airline seats are rude?")
+What age ranges and gender pairings have the highest and lowest proportions of thinking reclining airline seats are rude in this survey?")
 test_error()
 ```
