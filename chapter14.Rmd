@@ -1,3 +1,240 @@
 ---
-title       : Course Wrap-up
-description : Insert the chapter description here
+title       : Supplement to ModernDive textbook
+description : To supplement learning of the material covered at http://moderndive.com, this chapter provides a playground for you to work with the code and better understand what each of the gray chunks of R code throughout the book does.
+
+--- type:NormalExercise lang:r xp:0 skills:1 key:fa48676309
+
+
+*** =instructions
+
+- All of the needed packages and derived data sets from the [textbook](http://moderndive.com) are available to you here.  Note that the `View` function will not work on DataCamp as it does in RStudio, but I have added interactive versions of many of the data frames below and this simulates the `View` function well.
+
+<center>
+[ModernDive data frames](https://ismayc.github.io/Effective-Data-Storytelling-using-the-tidyverse/moderndive.html)
+</center>
+
+<br>
+
+- Please use this as a playground to answer the Learning Checks throughout the [ModernDive](http://moderndive.com) textbook.  There are no problems to complete here, but please do play around as needed!
+
+- Remember to use the `library` function to load any needed package given at the top of the chapters of the [ModernDive](http://moderndive.com) textbook.
+
+- Pressing the **Submit Answer** button will run all of the code in **script.R** in your **R Console**.  If you'd like to test things out, feel free to use the **R Console** directly.
+
+*** =pre_exercise_code
+```{r}
+# Week 03 Thurs
+library(tidyverse)
+library(nycflights13)
+library(fivethirtyeight)
+library(gapminder)
+library(okcupiddata)
+library(mosaic)
+library(broom)
+library(ggplot2movies)
+total_fertility <- readr::read_csv("https://ismayc.github.io/soc301_s2017/slides/data/total_fertility.csv") 
+colnames(total_fertility)[1] <- "country"
+total_fertility <- total_fertility %>% 
+  select(country, `1945`:`2015`) %>% 
+  na.omit()
+simple_ex <-
+  data_frame(
+    A = c(1, 2, 3, 4),
+    B = c(1, 2, 3, 4),
+    C = c(3, 2, 1, 2),
+    D = c("a", "a", "b", "b")
+  )
+set.seed(3)
+total_fert_tidy <- total_fertility %>% 
+  sample_n(6) %>% 
+  gather(-country, key = "year", value = "fert") %>% 
+  mutate(year = as.numeric(year)) 
+gap2007 <- gapminder %>% filter(year == 2007)
+
+# Week 03 Tues
+ideology <- read_csv("http://bit.ly/ideology-csv")
+police_join <- inner_join(x = police_locals, y = ideology, 
+                          by = "city")
+dem_score <- read_csv("https://ismayc.github.io/soc301_s2017/slides/data/dem_score.csv")
+
+# Week 04 Tues
+US_births_2014 <- US_births_2000_2014 %>% filter(year == 2014)
+
+## ModernDive.com
+
+# Chapter 3
+
+joined_flights <- inner_join(x = flights, y = airlines, by = "carrier")
+
+# Chapter 4
+
+all_alaska_flights <- flights %>% filter(carrier == "AS")
+early_january_weather <- weather %>% 
+  filter(origin == "EWR" & month == 1 & day <= 15)
+flights_table <- flights %>% dplyr::count(carrier)
+flights_namedports <- flights %>% 
+  inner_join(airports, by = c("origin" = "faa"))
+
+# Chapter 5
+
+portland_flights <- flights %>% 
+  filter(dest == "PDX")
+btv_sea_flights_fall <- flights %>% 
+  filter(origin == "JFK", (dest == "BTV" | dest == "SEA"), month >= 10)
+not_BTV_SEA <- flights %>% 
+  filter(!(dest == "BTV" | dest == "SEA"))
+summary_temp <- weather %>% 
+  summarize(mean = mean(temp, na.rm = TRUE), std_dev = sd(temp, na.rm = TRUE))
+summary_monthly_temp <- weather %>% 
+  group_by(month) %>% 
+  summarize(mean = mean(temp, na.rm = TRUE), 
+            std_dev = sd(temp, na.rm = TRUE))
+by_origin <- flights %>% 
+  group_by(origin) %>% 
+  summarize(count = n())
+by_monthly_origin <- flights %>% 
+  group_by(origin, month) %>% 
+  summarize(count = n())
+gain_summary <- flights %>% 
+  mutate(gain = arr_delay - dep_delay) %>% 
+  summarize(
+    min = min(gain, na.rm = TRUE),
+    q1 = quantile(gain, 0.25, na.rm = TRUE),
+    median = quantile(gain, 0.5, na.rm = TRUE),
+    q3 = quantile(gain, 0.75, na.rm = TRUE),
+    max = max(gain, na.rm = TRUE),
+    mean = mean(gain, na.rm = TRUE),
+    sd = sd(gain, na.rm = TRUE),
+    missing = sum(is.na(gain))
+  )
+freq_dest <- flights %>% 
+  group_by(dest) %>% 
+  summarize(num_flights = n())
+flights_joined <- flights %>% 
+  inner_join(airlines, by="carrier")
+named_dests <- flights %>%
+  group_by(dest) %>%
+  summarize(num_flights = n()) %>%
+  arrange(desc(num_flights)) %>%
+  inner_join(airports, by = c("dest" = "faa")) %>%
+  rename(airport_name = name)
+flights_no_year <- flights %>% 
+  select(-year)
+flight_arr_times <- flights %>% 
+  select(month:day, arr_time:sched_arr_time)
+flights_reorder <- flights %>% 
+  select(month:day, hour:time_hour, everything())
+flights_begin_a <- flights %>% 
+  select(starts_with("a"))
+flights_delays <- flights %>% 
+  select(ends_with("delay"))
+flights_time <- flights %>% 
+  select(contains("time"))
+flights_time_new <- flights %>% 
+  select(contains("time")) %>% 
+  rename(departure_time = dep_time,
+         arrival_time = arr_time)
+ten_freq_dests <- flights %>%
+  group_by(dest) %>%
+  summarize(num_flights = n()) %>%
+  top_n(n = 10) %>%
+  arrange(desc(num_flights))
+
+# Chapter 6
+
+# profiles_subset <- profiles %>% filter(between(height, 55, 85))
+# set.seed(2017)
+# profiles_sample1 <- profiles_subset %>%
+#   resample(size = 100, replace = FALSE)
+# profiles_sample2 <- profiles_subset %>% resample(size = 100, replace = FALSE)
+# profiles_sample3 <- profiles_subset %>% filter(height >= 72)
+# sample_means <- do(5000) *
+#   (profiles_subset %>% resample(size = 100, replace = FALSE) %>%
+#   summarize(mean_height = mean(height)))
+# simGuesses <- do(5000) * rflip(10)
+
+# # Chapter 7
+# 
+# bos_sfo <- flights %>% na.omit() %>% 
+#   filter(dest %in% c("BOS", "SFO")) %>% 
+#   group_by(dest) %>% 
+#   sample_n(100)
+# bos_sfo_summary <- bos_sfo %>% group_by(dest) %>% 
+#   summarize(mean_time = mean(air_time),
+#             sd_time = sd(air_time))
+# pvalue_tea <- simGuesses %>%
+#   filter(heads >= 9) %>%
+#   nrow() / nrow(simGuesses)
+# movies_trimmed <- movies %>% 
+#   select(title, year, rating, Action, Romance) %>% 
+#   filter(!(Action == 1 & Romance == 1)) %>% 
+#   mutate(genre = ifelse(Action == 1, "Action",
+#                         ifelse(Romance == 1, "Romance",
+#                                "Neither"))) %>%
+#   filter(genre != "Neither") %>%
+#   select(-Action, -Romance)
+# set.seed(2016)
+# movies_genre_sample <- movies_trimmed %>% 
+#   group_by(genre) %>%
+#   sample_n(34)
+# summary_ratings <- movies_genre_sample %>% 
+#   group_by(genre) %>%
+#   summarize(mean = mean(rating),
+#             std_dev = sd(rating),
+#             n = n())
+# mean_ratings <- movies_genre_sample %>% group_by(genre) %>%
+#   summarize(mean = mean(rating))
+# obs_diff <- diff(mean_ratings$mean)
+# shuffled_ratings <- movies_trimmed %>%
+#      mutate(rating = shuffle(rating)) %>% 
+#      group_by(genre) %>%
+#      summarize(mean = mean(rating))
+# many_shuffles <- do(5000) * 
+#   (movies_trimmed %>%
+#      mutate(rating = shuffle(rating)) %>% 
+#      group_by(genre) %>%
+#      summarize(mean = mean(rating))
+#    )
+# rand_distn <- many_shuffles %>%
+#   group_by(.index) %>%
+#   summarize(diffmean = diff(mean))
+# s1 <- summary_ratings$std_dev[2]
+# s2 <- summary_ratings$std_dev[1]
+# n1 <- summary_ratings$n[2]
+# n2 <- summary_ratings$n[1]
+# denom_T <- sqrt( (s1^2 / n1) + (s2^2 / n2) )
+# rand_distn <- rand_distn %>% 
+#   mutate(t_stat = diffmean / denom_T * 10)
+# t_obs <- obs_diff / denom_T
+# 
+# # Chapter 8
+# 
+# set.seed(2017)
+# movies_sample <- movies %>% resample(size = 50, replace = FALSE)
+# movies_sample_mean <- movies_sample %>% 
+#    summarize(mean = mean(rating))
+# boot1 <- resample(movies_sample) %>%
+#   arrange(orig.id)
+# movies_boot1_mean <- boot1 %>% summarize(mean = mean(rating))
+# trials <- do(5000) * summarize(resample(movies_sample), 
+#                                 mean = mean(rating))
+# ciq_mean_rating <- confint(trials, level = 0.95, method = "quantile")
+# cise_mean_rating <- confint(trials, level = 0.95, method = "stderr")
+# std_err <- rand_distn %>% summarize(se = sd(diffmean))
+# df1 <- data_frame(samp1 = rexp(50))
+# df2 <- data_frame(samp2 = rnorm(100))
+# df3 <- data_frame(samp3 = rbeta(20, 5, 5))
+# 
+# # Chapter 9
+# 
+# alaska_flights <- flights %>% 
+#   filter(carrier == "AS") %>% 
+#   filter(!is.na(dep_delay) & !is.na(arr_delay)) %>% 
+#   resample(size = 50, replace = FALSE)
+# delay_fit <- lm(formula = arr_delay ~ dep_delay, data = alaska_flights)
+# b1_obs <- tidy(delay_fit)$estimate[2]
+# rand_slope_distn <- mosaic::do(5000) *
+#   (lm(formula = shuffle(arr_delay) ~ dep_delay, data = alaska_flights) %>%
+#      coef())
+# fits <- augment(delay_fit)
+```
