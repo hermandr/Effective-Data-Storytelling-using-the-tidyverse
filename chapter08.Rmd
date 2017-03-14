@@ -3,17 +3,17 @@ title       : dplyr Review
 description : Create a new column in a data frame, modify an existing column, and sort by one or more columns using the dplyr package.  Review the main ideas of the Five Main Verbs of dplyr - filter, summarize, group_by, mutate, and arrange (in development).
 
 --- type:NormalExercise lang:r xp:100 skills:1,4 key:62a044eae1
-## Create two new variables
+## Create a new variable
 
 Recall the `bechdel` data set in the `fivethirtyeight` package used in the 2014 article from FiveThirtyEight.com entitled "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women" [here](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).  
 
 *** =instructions
-- First create a modified data frame that includes only years 2000 to 2013, inclusive.  Provide the name `bechdel00_13` for this smaller data frame.  Note that the `between()` function in `dplyr` may be helpful.  You should check that you have correctly created `bechdel00_13` in the R Console.
-- Now add a column to `bechdel00_13` that calculates the domestic return on investment for all 2000 to 2013 movies based on 2013 dollars.  This is calculated as `roi_dom = domgross_2013 / budget_2013` and gives how much money the movie earned for each dollar spent.
+- First create a modified data frame that includes only years 2000 to 2013, inclusive.  Provide the name `bechdel00_13` for this smaller data frame.  You should check that you have correctly created `bechdel_00_13` in the R Console.
+- Now add a column to `bechdel_00_13` that calculates the domestic return on investment for all 2000 to 2013 movies based on 2013 dollars.  This is calculated as `roi_dom = domgross_2013 / budget` and gives how much money the movie earned for each dollar spent.
 
 
 *** =hint
-- `between` expects three arguments:  the name of the variable, the beginning entry, and the ending entry.
+- You may want to use the `between` function in `dplyr` for your `filter` here, which expects three arguments:  the name of the variable, the beginning entry, and the ending entry.
 - Remember to add a variable to a data frame you need to assign the name back to include the change.  Something like `flights <- flights %>% mutate(gain = arr_delay - dep_delay)`.
 
 *** =pre_exercise_code
@@ -30,16 +30,60 @@ Recall the `bechdel` data set in the `fivethirtyeight` package used in the 2014 
 ```{r}
 library(fivethirtyeight)
 library(dplyr)
-bechdel00_13 <- bechdel %>%
+bechdel_00_13 <- bechdel %>%
     filter(between(year, 2000, 2013)) %>%
-    mutate(roi_dom = domgross_2013 / budget_2013)
+    mutate(roi_dom = domgross_2013 / budget)
 ```
 
 *** =sct
 ```{r}
 test_library_function("fivethirtyeight")
 test_library_function("dplyr")
-test_object("bechdel00_13")
+test_object("bechdel_00_13")
+success_msg("Nicely done!")
+test_error()
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1,4 key:4de37aa411
+## Modify an existing variable
+
+We will continue using the `bechdel_00_13` data set you created in the last exercise.  It has been loaded for you here.
+
+We used the `budget` variable in creating the `roi_dom` variable in the last exercise.  What we should have used is the `budget_2013` variable so that both the domestic gross and the budget were on the same 2013 level.  We can adjust `roi_dom` to have the correct value by multiplying by `budget_2013` and dividing by `budget`.
+
+*** =instructions
+- Modify the `roi_dom` variable in `bechdel_00_13` to include the correct entries for `roi_dom` as discussed above.
+
+
+*** =hint
+- Remember to use the `mutate()` function to modify the contents of a variable in a data frame.
+
+*** =pre_exercise_code
+```{r}
+library(fivethirtyeight)
+library(dplyr)
+bechdel_00_13 <- bechdel %>%
+    filter(between(year, 2000, 2013)) %>%
+    mutate(roi_dom = domgross_2013 / budget)
+```
+
+*** =sample_code
+```{r}
+library(dplyr)
+
+```
+
+*** =solution
+```{r}
+library(dplyr)
+bechdel_00_13 <- bechdel_00_13 %>%
+    mutate(roi_dom = budget_2013 / budget)
+```
+
+*** =sct
+```{r}
+test_library_function("dplyr")
+test_object("bechdel_00_13")
 success_msg("Nicely done!")
 test_error()
 ```
