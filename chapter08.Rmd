@@ -1,6 +1,6 @@
 ---
 title       : dplyr Review
-description : Create a new column in a data frame, modify an existing column, and sort by one or more columns using the dplyr package.  Review the main ideas of the Five Main Verbs of dplyr - filter, summarize, group_by, mutate, and arrange (in development).
+description : Create a new column in a data frame, modify an existing column, and sort by one or more columns using the dplyr package.  Review the main ideas of the Five Main Verbs of dplyr - filter, summarize, group_by, mutate, and arrange.
 
 --- type:NormalExercise lang:r xp:100 skills:1,4 key:762c02a329
 ## Modify an existing variable
