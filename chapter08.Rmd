@@ -288,7 +288,7 @@ test_or({
   aes_fun <- alt_ex_1 %>% check_function("aes")
   aes_fun %>% check_arg("x") %>% check_equal(eval = FALSE)
   aes_fun %>% check_arg("y") %>% check_equal(eval = FALSE)
-  geom_bar_fun <- alt_ex_1 %>% check_function("geom_pos")
+  geom_bar_fun <- alt_ex_1 %>% check_function("geom_col")
   geom_bar_fun %>% check_arg("position") %>% check_equal(eval = FALSE)
   geom_bar_fun %>% check_arg("color") %>% check_equal(eval = FALSE)
   geom_bar_fun %>% check_arg("mapping")
