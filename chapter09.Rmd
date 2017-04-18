@@ -24,7 +24,9 @@ description : To supplement learning of the material covered at http://moderndiv
 *** =pre_exercise_code
 ```{r}
 # Week 03 Thurs
-library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
 library(nycflights13)
 library(fivethirtyeight)
 library(gapminder)
