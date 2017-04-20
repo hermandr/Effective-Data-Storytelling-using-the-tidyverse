@@ -33,6 +33,7 @@ library(gapminder)
 library(okcupiddata)
 library(broom)
 library(ggplot2movies)
+library(readr)
 total_fertility <- readr::read_csv("https://ismayc.github.io/soc301_s2017/slides/data/total_fertility.csv") 
 colnames(total_fertility)[1] <- "country"
 total_fertility <- total_fertility %>% 
